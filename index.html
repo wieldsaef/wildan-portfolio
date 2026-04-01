@@ -4,400 +4,323 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wildan Saefudin | Strategy-to-Execution Leader</title>
-  <meta name="description" content="Strategy-to-execution leader building new businesses, improving profitability, and driving transformation across mining and industrial sectors." />
+  <meta name="description" content="Strategy-to-execution leader building businesses, improving profitability, and driving transformation across mining and industrial sectors." />
   <style>
-    :root {
-      --bg: #0b1020;
-      --bg-soft: #121933;
-      --card: rgba(255,255,255,0.08);
-      --card-border: rgba(255,255,255,0.12);
-      --text: #ecf2ff;
-      --muted: #b7c2e0;
-      --accent: #63a4ff;
-      --accent-2: #7ef0c7;
-      --white: #ffffff;
-      --shadow: 0 20px 50px rgba(0,0,0,0.25);
-      --radius: 22px;
-      --max: 1120px;
+    :root{
+      --bg:#07111f;
+      --bg2:#0d1b2f;
+      --panel:rgba(255,255,255,.07);
+      --panel-2:rgba(255,255,255,.05);
+      --stroke:rgba(255,255,255,.12);
+      --text:#edf4ff;
+      --muted:#aab9d6;
+      --blue:#72a8ff;
+      --cyan:#79f0e0;
+      --purple:#8f7dff;
+      --shadow:0 24px 60px rgba(0,0,0,.28);
+      --radius:24px;
+      --max:1180px;
     }
 
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: Inter, Arial, Helvetica, sans-serif;
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, Arial, Helvetica, sans-serif;
+      color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(99,164,255,0.15), transparent 30%),
-        radial-gradient(circle at top right, rgba(126,240,199,0.10), transparent 25%),
-        linear-gradient(180deg, #0b1020 0%, #0d1326 50%, #0b1020 100%);
-      color: var(--text);
-      line-height: 1.6;
+        radial-gradient(circle at 10% 10%, rgba(114,168,255,.18), transparent 24%),
+        radial-gradient(circle at 90% 8%, rgba(121,240,224,.12), transparent 20%),
+        radial-gradient(circle at 50% 45%, rgba(143,125,255,.12), transparent 28%),
+        linear-gradient(180deg, #07111f 0%, #0b1423 30%, #09101d 100%);
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(92%,var(--max));margin:0 auto}
+
+    .nav{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(14px);
+      background:rgba(7,17,31,.62);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav-inner{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:16px 0;
+    }
+    .brand{
+      font-weight:800;letter-spacing:.2px;font-size:16px
+    }
+    .brand span{color:var(--blue)}
+    .nav-links{
+      display:flex;gap:22px;flex-wrap:wrap;
+      color:var(--muted);font-size:14px
+    }
+    .nav-links a:hover{color:#fff}
+
+    .hero{
+      position:relative;
+      padding:84px 0 56px;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;inset:auto auto 10% -10%;
+      width:420px;height:420px;border-radius:50%;
+      background:radial-gradient(circle, rgba(114,168,255,.15), transparent 60%);
+      filter:blur(20px);
+      pointer-events:none;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:24px;
+      align-items:stretch;
+    }
+    .glass{
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border:1px solid var(--stroke);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+    }
+    .hero-left{padding:42px}
+    .hero-right{padding:22px;display:grid;gap:16px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:9px 14px;border-radius:999px;
+      background:rgba(114,168,255,.12);
+      border:1px solid rgba(114,168,255,.22);
+      color:#dbe8ff;font-size:13px;font-weight:700;
+      margin-bottom:16px
+    }
+    h1{
+      margin:0 0 12px;
+      font-size:clamp(38px,6vw,74px);
+      line-height:1.02;
+      letter-spacing:-2px;
+    }
+    .headline{
+      font-size:clamp(18px,2vw,24px);
+      color:#d7e5ff;
+      font-weight:600;
+      margin-bottom:14px;
+      max-width:820px;
+    }
+    .hero-desc{
+      margin:0 0 26px;
+      color:var(--muted);
+      max-width:760px;
+      font-size:16px;
+    }
+    .cta{
+      display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px
+    }
+    .btn{
+      padding:14px 18px;
+      border-radius:14px;
+      font-weight:700;
+      transition:.25s ease;
+      display:inline-flex;align-items:center;justify-content:center;
+      border:1px solid transparent;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg, var(--blue), var(--purple));
+      color:#fff;
+      box-shadow:0 12px 30px rgba(114,168,255,.28);
+    }
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-secondary{
+      background:rgba(255,255,255,.04);
+      border-color:rgba(255,255,255,.12);
+      color:var(--text);
+    }
+    .btn-secondary:hover{background:rgba(255,255,255,.08)}
+    .tag-row{display:flex;gap:10px;flex-wrap:wrap}
+    .tag{
+      font-size:13px;color:#d7e4ff;
+      padding:8px 12px;border-radius:999px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.1);
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    .metric{
+      padding:18px 18px 20px;
+      border-radius:22px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.1);
+      min-height:124px;
+      display:flex;flex-direction:column;justify-content:flex-end;
+      position:relative;overflow:hidden;
+    }
+    .metric::after{
+      content:"";
+      position:absolute;right:-40px;top:-40px;width:140px;height:140px;border-radius:50%;
+      background:radial-gradient(circle, rgba(121,240,224,.10), transparent 70%);
+    }
+    .metric .kicker{
+      font-size:12px;text-transform:uppercase;letter-spacing:.9px;
+      color:var(--cyan);font-weight:800;margin-bottom:8px;
+    }
+    .metric .number{
+      font-size:34px;font-weight:900;line-height:1;margin-bottom:8px;
+    }
+    .metric .label{
+      color:var(--muted);font-size:14px
     }
 
-    .container {
-      width: min(92%, var(--max));
-      margin: 0 auto;
+    section{padding:26px 0 34px}
+    .section-head{
+      display:flex;justify-content:space-between;gap:16px;align-items:end;flex-wrap:wrap;
+      margin-bottom:22px
+    }
+    .section-title{
+      margin:0;
+      font-size:32px;
+      letter-spacing:-1px;
+    }
+    .section-subtitle{
+      margin:0;
+      color:var(--muted);
+      max-width:760px;
     }
 
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      backdrop-filter: blur(12px);
-      background: rgba(11,16,32,0.65);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+    .about-grid,
+    .expertise-grid,
+    .projects-grid,
+    .contact-grid{
+      display:grid;gap:20px;
+    }
+    .about-grid{grid-template-columns:1fr 1fr}
+    .expertise-grid{grid-template-columns:repeat(2,1fr)}
+    .projects-grid{grid-template-columns:repeat(2,1fr)}
+    .contact-grid{grid-template-columns:1.1fr .9fr}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+
+    .card{
+      background:var(--panel);
+      border:1px solid var(--stroke);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute;inset:0 0 auto 0;height:1px;
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,.22), transparent);
+    }
+    .card h3{
+      margin:0 0 10px;
+      font-size:21px;
+      letter-spacing:-.3px;
+    }
+    .card p{
+      margin:0;
+      color:var(--muted);
     }
 
-    .nav-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
+    .split-title{
+      display:flex;justify-content:space-between;gap:12px;align-items:start;
+      margin-bottom:14px;
+    }
+    .badge{
+      font-size:12px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;
+      color:#dff7f4;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid rgba(121,240,224,.2);
+      background:rgba(121,240,224,.08);
+      white-space:nowrap;
     }
 
-    .brand {
-      font-weight: 700;
-      letter-spacing: 0.2px;
+    .stat-box{
+      padding:22px;border-radius:22px;
+      background:linear-gradient(180deg, rgba(114,168,255,.12), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.1);
+      box-shadow:var(--shadow);
+    }
+    .stat-box .value{
+      font-size:34px;font-weight:900;line-height:1;margin-bottom:10px;
+    }
+    .stat-box .desc{
+      color:var(--muted);font-size:14px;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-      font-size: 14px;
-      color: var(--muted);
+    .project-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:26px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      transition:.25s ease;
+      position:relative;overflow:hidden;
+    }
+    .project-card:hover{
+      transform:translateY(-5px);
+      border-color:rgba(114,168,255,.3);
+    }
+    .project-card::after{
+      content:"";
+      position:absolute;right:-50px;bottom:-60px;width:180px;height:180px;border-radius:50%;
+      background:radial-gradient(circle, rgba(114,168,255,.10), transparent 70%);
+    }
+    .project-title{
+      margin:0 0 14px;
+      font-size:24px;
+      letter-spacing:-.6px;
+    }
+    .line{
+      margin:10px 0;
+      color:var(--muted);
+      font-size:15px;
+    }
+    .line strong{color:#fff}
+    .mini-impact{
+      margin-top:16px;
+      display:inline-block;
+      font-size:13px;font-weight:800;
+      color:#dbe8ff;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(114,168,255,.1);
+      border:1px solid rgba(114,168,255,.18);
     }
 
-    .nav-links a:hover {
-      color: var(--white);
+    .contact-list{display:grid;gap:12px;margin-top:16px}
+    .contact-item{
+      padding:14px 16px;border-radius:16px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:var(--muted);
+    }
+    .contact-item span{
+      display:block;margin-bottom:4px;
+      color:#fff;font-weight:700;
     }
 
-    .hero {
-      padding: 88px 0 52px;
+    .footer{
+      padding:18px 0 42px;
+      color:#8fa2c7;
+      text-align:center;
+      font-size:14px;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .hero-left,
-    .hero-right {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid var(--card-border);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-left {
-      padding: 40px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(99,164,255,0.12);
-      color: #cfe1ff;
-      font-size: 13px;
-      border: 1px solid rgba(99,164,255,0.25);
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0 0 14px;
-      font-size: clamp(36px, 6vw, 64px);
-      line-height: 1.05;
-      letter-spacing: -1.5px;
-    }
-
-    .headline {
-      font-size: clamp(18px, 2vw, 22px);
-      color: #d9e5ff;
-      margin-bottom: 16px;
-      font-weight: 600;
-    }
-
-    .hero-desc {
-      color: var(--muted);
-      max-width: 720px;
-      font-size: 16px;
-      margin-bottom: 28px;
-    }
-
-    .cta-row {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 24px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 18px;
-      border-radius: 14px;
-      font-weight: 600;
-      transition: 0.25s ease;
-      border: 1px solid transparent;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #8a7dff);
-      color: var(--white);
-      box-shadow: 0 10px 30px rgba(99,164,255,0.25);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.04);
-      border-color: rgba(255,255,255,0.12);
-      color: var(--text);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.08);
-    }
-
-    .hero-tags {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-      color: #d8e4ff;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-    }
-
-    .hero-right {
-      padding: 26px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .mini-label {
-      color: var(--accent-2);
-      font-size: 13px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .impact-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 20px;
-      padding: 18px;
-    }
-
-    .impact-number {
-      font-size: 34px;
-      font-weight: 800;
-      line-height: 1;
-      margin-bottom: 10px;
-    }
-
-    .impact-text {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    section {
-      padding: 28px 0 34px;
-    }
-
-    .section-title {
-      font-size: 30px;
-      margin: 0 0 10px;
-      letter-spacing: -0.8px;
-    }
-
-    .section-subtitle {
-      color: var(--muted);
-      margin: 0 0 24px;
-      max-width: 760px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 20px;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .stat-box {
-      padding: 22px;
-      border-radius: 22px;
-      background: linear-gradient(180deg, rgba(99,164,255,0.12), rgba(255,255,255,0.04));
-      border: 1px solid rgba(255,255,255,0.10);
-      box-shadow: var(--shadow);
-    }
-
-    .stat-box .value {
-      font-size: 32px;
-      font-weight: 800;
-      margin-bottom: 8px;
-      color: var(--white);
-    }
-
-    .stat-box .label {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .project-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-      transition: 0.25s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(99,164,255,0.28);
-    }
-
-    .project-title {
-      font-size: 22px;
-      margin: 0 0 12px;
-    }
-
-    .project-line {
-      margin: 10px 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .project-line strong {
-      color: var(--white);
-    }
-
-    .footer-card {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 20px;
-      align-items: stretch;
-    }
-
-    .contact-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 16px;
-    }
-
-    .contact-item {
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: var(--muted);
-    }
-
-    .contact-item span {
-      color: var(--white);
-      font-weight: 600;
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .footer-note {
-      color: #8ea0c7;
-      font-size: 14px;
-      padding: 26px 0 40px;
-      text-align: center;
-    }
-
-    @media (max-width: 980px) {
+    @media (max-width: 1024px){
       .hero-grid,
-      .grid-2,
-      .project-grid,
-      .footer-card {
-        grid-template-columns: 1fr;
-      }
-
-      .grid-4 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero {
-        padding-top: 60px;
-      }
+      .about-grid,
+      .contact-grid,
+      .projects-grid,
+      .expertise-grid{grid-template-columns:1fr}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
     }
 
-    @media (max-width: 640px) {
-      .nav-inner {
-        gap: 12px;
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .grid-4 {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-left,
-      .hero-right,
-      .card,
-      .project-card,
-      .stat-box {
-        padding: 20px;
-      }
-
-      h1 {
-        font-size: 38px;
-      }
+    @media (max-width: 640px){
+      .nav-inner{flex-direction:column;align-items:flex-start;gap:10px}
+      .hero{padding-top:56px}
+      .hero-left,.hero-right,.card,.project-card{padding:20px}
+      .stats-grid{grid-template-columns:1fr}
+      .section-title{font-size:28px}
+      h1{font-size:42px}
     }
   </style>
 </head>
@@ -405,7 +328,7 @@
 
   <nav class="nav">
     <div class="container nav-inner">
-      <div class="brand">Wildan Saefudin</div>
+      <div class="brand">Wildan<span>.</span></div>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#expertise">Expertise</a>
@@ -418,21 +341,19 @@
 
   <header class="hero">
     <div class="container hero-grid">
-      <div class="hero-left">
+      <div class="glass hero-left">
         <div class="eyebrow">Strategy • Finance • Transformation</div>
         <h1>Building growth, profitability, and transformation.</h1>
         <div class="headline">Strategy-to-Execution Leader in Mining & Industrial Sectors</div>
         <p class="hero-desc">
           I build new business lines, improve profitability, and drive transformation through structured execution,
-          commercial thinking, financial analysis, and performance systems.
+          business analysis, commercial delivery, and performance systems.
         </p>
-
-        <div class="cta-row">
+        <div class="cta">
           <a class="btn btn-primary" href="#projects">View Featured Projects</a>
           <a class="btn btn-secondary" href="#contact">Let’s Connect</a>
         </div>
-
-        <div class="hero-tags">
+        <div class="tag-row">
           <div class="tag">Business Building</div>
           <div class="tag">CAPEX & Profitability</div>
           <div class="tag">Transformation</div>
@@ -440,24 +361,21 @@
         </div>
       </div>
 
-      <div class="hero-right">
-        <div>
-          <div class="mini-label">Selected Impact</div>
+      <div class="glass hero-right">
+        <div class="metric">
+          <div class="kicker">Selected Impact</div>
+          <div class="number">IDR 50B+</div>
+          <div class="label">CAPEX investment for a new business line built from low-grade nickel</div>
         </div>
-
-        <div class="impact-card">
-          <div class="impact-number">IDR 50B+</div>
-          <div class="impact-text">CAPEX business line creation from low-grade nickel</div>
+        <div class="metric">
+          <div class="kicker">Commercial Build-Up</div>
+          <div class="number">$2.8M/mo</div>
+          <div class="label">Trading revenue generated in under 3 months</div>
         </div>
-
-        <div class="impact-card">
-          <div class="impact-number">$2.8M/mo</div>
-          <div class="impact-text">Trading business launched in under 3 months</div>
-        </div>
-
-        <div class="impact-card">
-          <div class="impact-number">98%</div>
-          <div class="impact-text">Reporting cycle reduction through integrated data systems</div>
+        <div class="metric">
+          <div class="kicker">Data Transformation</div>
+          <div class="number">4h → 5m</div>
+          <div class="label">Reporting cycle reduced through dashboards and integrated systems</div>
         </div>
       </div>
     </div>
@@ -465,26 +383,36 @@
 
   <section id="about">
     <div class="container">
-      <h2 class="section-title">About</h2>
-      <p class="section-subtitle">
-        Strategy-to-execution leader with 10+ years of experience building businesses, improving profitability,
-        and driving transformation across mining and industrial sectors.
-      </p>
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">About</h2>
+          <p class="section-subtitle">
+            Strategy-to-execution leader with 10+ years of experience building businesses, improving profitability,
+            and driving transformation across mining and industrial sectors.
+          </p>
+        </div>
+      </div>
 
-      <div class="grid-2">
+      <div class="about-grid">
         <div class="card">
-          <h3>Core Positioning</h3>
+          <div class="split-title">
+            <h3>Core Positioning</h3>
+            <div class="badge">Executive Profile</div>
+          </div>
           <p>
-            I work at the intersection of strategy, execution, finance, and operating model transformation.
-            My focus is turning complex business problems into measurable outcomes.
+            I operate at the intersection of strategy, execution, finance, and operating model transformation.
+            My focus is turning complex business challenges into measurable outcomes.
           </p>
         </div>
 
         <div class="card">
-          <h3>How I Create Value</h3>
+          <div class="split-title">
+            <h3>How I Create Value</h3>
+            <div class="badge">Build → Transform</div>
+          </div>
           <p>
-            Build new business lines, transform organizations and systems, scale performance, and enable
-            faster decision-making through data and governance.
+            Build new business lines, transform organizations and systems, scale performance and profitability,
+            and enable faster decision-making through governance and data.
           </p>
         </div>
       </div>
@@ -493,30 +421,32 @@
 
   <section id="expertise">
     <div class="container">
-      <h2 class="section-title">Core Expertise</h2>
-      <p class="section-subtitle">
-        End-to-end capabilities across strategy, transformation, performance, and business analysis.
-      </p>
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Core Expertise</h2>
+          <p class="section-subtitle">
+            End-to-end capabilities across strategic planning, business transformation,
+            financial analysis, and performance management.
+          </p>
+        </div>
+      </div>
 
-      <div class="grid-2">
+      <div class="expertise-grid">
         <div class="card">
           <h3>Strategic Planning & Direction</h3>
-          <p>Shape corporate strategy, align business plans, and prioritize growth and execution.</p>
+          <p>Shape corporate strategy, align business plans, and prioritize growth with execution discipline.</p>
         </div>
-
         <div class="card">
           <h3>Business Transformation & Performance</h3>
-          <p>Lead cross-functional transformation initiatives and improve operational efficiency.</p>
+          <p>Lead cross-functional transformation and improve operational efficiency at scale.</p>
         </div>
-
         <div class="card">
           <h3>Financial & Business Analysis</h3>
           <p>Develop business cases, CAPEX models, profitability analysis, and payback assessments.</p>
         </div>
-
         <div class="card">
           <h3>Data & Performance Management</h3>
-          <p>Design KPI systems, executive dashboards, and decision-support reporting infrastructure.</p>
+          <p>Build KPI systems, dashboards, and reporting structures that accelerate decision-making.</p>
         </div>
       </div>
     </div>
@@ -524,27 +454,31 @@
 
   <section id="impact">
     <div class="container">
-      <h2 class="section-title">Selected Impact</h2>
-      <p class="section-subtitle">
-        A few measurable results across business building, transformation, governance, and data systems.
-      </p>
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Selected Impact</h2>
+          <p class="section-subtitle">
+            Measurable outcomes across business building, governance, commercial launch, and data systems.
+          </p>
+        </div>
+      </div>
 
-      <div class="grid-4">
+      <div class="stats-grid">
         <div class="stat-box">
           <div class="value">3.6M MT</div>
-          <div class="label">Low-grade nickel converted into a revenue-generating asset</div>
+          <div class="desc">Low-grade nickel converted into a revenue-generating asset</div>
         </div>
         <div class="stat-box">
           <div class="value">$2.8M/mo</div>
-          <div class="label">Trading revenue created in under 3 months</div>
+          <div class="desc">Trading revenue built from zero in under 3 months</div>
         </div>
         <div class="stat-box">
           <div class="value">80% Faster</div>
-          <div class="label">Decision-making cycle improvement across 12 business units</div>
+          <div class="desc">Decision-making cycle improvement across 12 business units</div>
         </div>
         <div class="stat-box">
-          <div class="value">4h → 5m</div>
-          <div class="label">Reporting cycle reduced through dashboards and data systems</div>
+          <div class="value">98%</div>
+          <div class="desc">Reporting cycle reduction through automation and dashboards</div>
         </div>
       </div>
     </div>
@@ -552,38 +486,46 @@
 
   <section id="projects">
     <div class="container">
-      <h2 class="section-title">Featured Projects</h2>
-      <p class="section-subtitle">
-        Selected examples of strategy translated into execution and measurable business outcomes.
-      </p>
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">
+            Selected examples of strategy translated into execution and business impact.
+          </p>
+        </div>
+      </div>
 
-      <div class="project-grid">
+      <div class="projects-grid">
         <div class="project-card">
           <h3 class="project-title">New Business Line Creation</h3>
-          <div class="project-line"><strong>Challenge:</strong> 3.6M MT of low-grade nickel was treated as non-commercial waste.</div>
-          <div class="project-line"><strong>Execution:</strong> Built the business case, led commissioning, established in-house operations, SOP, and cost controls.</div>
-          <div class="project-line"><strong>Impact:</strong> Created a new IDR 50B+ CAPEX business line and reduced handling cost.</div>
+          <div class="line"><strong>Challenge:</strong> 3.6M MT of low-grade nickel was treated as non-commercial waste.</div>
+          <div class="line"><strong>Execution:</strong> Built the business case, led commissioning, established in-house operations, SOP, and cost controls.</div>
+          <div class="line"><strong>Impact:</strong> Created a new IDR 50B+ CAPEX business line and reduced handling cost.</div>
+          <div class="mini-impact">Build</div>
         </div>
 
         <div class="project-card">
           <h3 class="project-title">Organization Transformation</h3>
-          <div class="project-line"><strong>Challenge:</strong> Decision-making was centralized, slow, and dependent on individuals.</div>
-          <div class="project-line"><strong>Execution:</strong> Designed structure, governance, SOP, roles, and accountability systems.</div>
-          <div class="project-line"><strong>Impact:</strong> Reduced decision cycle from 5 days to 1 day and improved compliance across 12 business units.</div>
+          <div class="line"><strong>Challenge:</strong> Decision-making was centralized, slow, and highly dependent on individuals.</div>
+          <div class="line"><strong>Execution:</strong> Designed organizational structure, governance framework, SOP, and accountability systems.</div>
+          <div class="line"><strong>Impact:</strong> Reduced decision cycle from 5 days to 1 day and improved compliance across 12 business units.</div>
+          <div class="mini-impact">Transform</div>
         </div>
 
         <div class="project-card">
           <h3 class="project-title">Commercial Launch</h3>
-          <div class="project-line"><strong>Challenge:</strong> No trading business, team, or sourcing structure existed.</div>
-          <div class="project-line"><strong>Execution:</strong> Built the trading model, supplier network, pricing flow, and operating structure.</div>
-          <div class="project-line"><strong>Impact:</strong> Reached $2.8M monthly revenue and ~$200K monthly gross margin within 3 months.</div>
+          <div class="line"><strong>Challenge:</strong> No trading business, sourcing pipeline, or operating model existed.</div>
+          <div class="line"><strong>Execution:</strong> Built the trading model, supplier network, pricing mechanism, and cross-functional operating flow.</div>
+          <div class="line"><strong>Impact:</strong> Reached $2.8M monthly revenue and ~$200K monthly gross margin within 3 months.</div>
+          <div class="mini-impact">Scale</div>
         </div>
 
         <div class="project-card">
           <h3 class="project-title">Data Transformation</h3>
-          <div class="project-line"><strong>Challenge:</strong> Reporting was manual, slow, and lacked real-time visibility.</div>
-          <div class="project-line"><strong>Execution:</strong> Built centralized databases, KPI frameworks, dashboards, and governance.</div>
-          <div class="project-line"><strong>Impact:</strong> Reduced reporting time from 4 hours to 5 minutes and enabled real-time decisions.</div>
+          <div class="line"><strong>Challenge:</strong> Reporting was manual, slow, and lacked real-time visibility.</div>
+          <div class="line"><strong>Execution:</strong> Built centralized databases, KPI frameworks, dashboards, and reporting governance.</div>
+          <div class="line"><strong>Impact:</strong> Reduced reporting time from 4 hours to 5 minutes and enabled faster decisions.</div>
+          <div class="mini-impact">Enable</div>
         </div>
       </div>
     </div>
@@ -591,12 +533,16 @@
 
   <section id="contact">
     <div class="container">
-      <h2 class="section-title">Let’s Connect</h2>
-      <p class="section-subtitle">
-        Open to strategy, finance, business planning, and transformation opportunities.
-      </p>
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Let’s Connect</h2>
+          <p class="section-subtitle">
+            Open to strategy, finance, business planning, and transformation opportunities.
+          </p>
+        </div>
+      </div>
 
-      <div class="footer-card">
+      <div class="contact-grid">
         <div class="card">
           <h3>Contact</h3>
           <div class="contact-list">
@@ -612,16 +558,20 @@
               <span>LinkedIn</span>
               <a href="https://linkedin.com/in/wildan-saefudin" target="_blank">linkedin.com/in/wildan-saefudin</a>
             </div>
+            <div class="contact-item">
+              <span>Location</span>
+              Jakarta / Tangerang
+            </div>
           </div>
         </div>
 
         <div class="card">
-          <h3>Positioning</h3>
+          <h3>Executive Summary</h3>
           <p>
-            Strategy-to-execution leader delivering business growth, transformation, profitability improvement,
-            and data-enabled operating performance.
+            Strategy-to-execution leader delivering business growth, profitability improvement,
+            operating model transformation, and data-enabled performance management.
           </p>
-          <div class="cta-row" style="margin-top:20px;">
+          <div class="cta" style="margin-top:20px;">
             <a class="btn btn-primary" href="mailto:wieldsaef@gmail.com">Email Me</a>
             <a class="btn btn-secondary" href="https://linkedin.com/in/wildan-saefudin" target="_blank">View LinkedIn</a>
           </div>
@@ -630,7 +580,7 @@
     </div>
   </section>
 
-  <div class="container footer-note">
+  <div class="container footer">
     © 2025 Wildan Saefudin — Strategy to Execution Portfolio
   </div>
 

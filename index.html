@@ -767,57 +767,134 @@
     .dashboard-art{
       aspect-ratio:4/5;
       border-radius:18px;
-      background:linear-gradient(180deg,#eef3f8,#fbfcfe);
+      background:linear-gradient(180deg,#eff4f9,#fbfcfe);
       border:1px solid rgba(31,59,99,.06);
-      padding:24px;
+      padding:20px;
       display:flex;
       align-items:center;
       justify-content:center;
+      overflow:hidden;
     }
 
-    .dashboard-art-inner{
+    .dashboard-frame{
       width:100%;
+      height:100%;
+      border-radius:16px;
+      background:linear-gradient(180deg,#ffffff,#f8fbff);
+      border:1px solid rgba(31,59,99,.08);
+      box-shadow:0 10px 22px rgba(20,35,60,.04);
+      padding:14px;
       display:grid;
       gap:12px;
     }
 
-    .art-bar{
-      height:48px;
-      border-radius:14px;
-      background:#dde7f1;
-    }
-
-    .art-grid{
+    .dash-top{
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-    }
-
-    .art-box{
-      height:120px;
-      border-radius:14px;
-      background:#e7eef6;
-    }
-
-    .art-box.tall{
-      height:100px;
-      background:#edf3f9;
-    }
-
-    .art-line-row{
-      display:flex;
+      grid-template-columns:1.2fr .9fr .9fr;
       gap:10px;
     }
 
-    .art-line{
-      height:16px;
-      border-radius:999px;
-      background:#cfdaea;
-      flex:1;
+    .dash-stat{
+      border-radius:12px;
+      background:linear-gradient(180deg,#f8fbff,#eef4fb);
+      border:1px solid rgba(31,59,99,.05);
+      padding:12px;
+      min-height:72px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
     }
 
-    .art-line.wide{ flex:1.6; }
-    .art-line.small{ flex:.8; }
+    .dash-stat .mini{
+      width:42px;
+      height:8px;
+      border-radius:999px;
+      background:#c5d4e8;
+    }
+
+    .dash-stat .num{
+      width:70%;
+      height:14px;
+      border-radius:999px;
+      background:#94afd0;
+    }
+
+    .dash-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:12px;
+      min-height:160px;
+    }
+
+    .dash-card{
+      border-radius:14px;
+      background:linear-gradient(180deg,#f9fbfe,#eef4fb);
+      border:1px solid rgba(31,59,99,.05);
+      padding:12px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      justify-content:space-between;
+    }
+
+    .bars{
+      display:flex;
+      align-items:flex-end;
+      gap:8px;
+      height:92px;
+    }
+
+    .bar{
+      flex:1;
+      border-radius:10px 10px 4px 4px;
+      background:linear-gradient(180deg,#aac0dd,#6f91bb);
+    }
+
+    .bar.b1{ height:44%; }
+    .bar.b2{ height:68%; }
+    .bar.b3{ height:56%; }
+    .bar.b4{ height:82%; }
+    .bar.b5{ height:62%; }
+
+    .donut-wrap{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:100%;
+    }
+
+    .donut{
+      width:96px;
+      height:96px;
+      border-radius:50%;
+      background:
+        conic-gradient(#6f91bb 0 62%, #c9d7e8 62% 82%, #e6eef7 82% 100%);
+      position:relative;
+    }
+
+    .donut::after{
+      content:"";
+      position:absolute;
+      inset:18px;
+      border-radius:50%;
+      background:#f9fbfe;
+      border:1px solid rgba(31,59,99,.04);
+    }
+
+    .dash-bottom{
+      display:grid;
+      gap:10px;
+    }
+
+    .dash-line{
+      height:14px;
+      border-radius:999px;
+      background:#dbe5f1;
+    }
+
+    .dash-line.w1{ width:100%; }
+    .dash-line.w2{ width:82%; }
+    .dash-line.w3{ width:64%; }
 
     /* SUMMARY */
     .summary-box{
@@ -992,18 +1069,29 @@
         padding:46px 22px 34px;
       }
 
+      .hero-grid{
+        gap:20px;
+      }
+
       .hero-actions,
       .cta-actions{
         flex-direction:column;
         align-items:stretch;
       }
 
+      .hero-actions .btn,
+      .cta-actions .btn{
+        width:100%;
+      }
+
       .hero-visual{
         padding-left:0;
+        display:block;
       }
 
       .hero-photo-wrap{
-        max-width:none;
+        max-width:260px;
+        margin:0 auto;
       }
 
       .floating-card{
@@ -1013,7 +1101,18 @@
         top:auto;
         bottom:auto;
         transform:none;
-        margin-top:12px;
+        margin-top:10px;
+        width:100%;
+        min-width:0;
+      }
+
+      .about-photo-card{
+        padding:12px;
+      }
+
+      .about-photo{
+        max-height:420px;
+        object-fit:cover;
       }
 
       .timeline::before{
@@ -1034,8 +1133,59 @@
         gap:8px;
       }
 
+      .project-card{
+        padding:14px;
+        gap:18px;
+      }
+
+      .project-photo,
+      .dashboard-art{
+        aspect-ratio:16/10;
+      }
+
+      .dashboard-frame{
+        padding:12px;
+        gap:10px;
+      }
+
+      .dash-top{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .dash-top .dash-stat:first-child{
+        grid-column:1 / -1;
+      }
+
+      .dash-grid{
+        grid-template-columns:1fr;
+        min-height:auto;
+      }
+
+      .bars{
+        height:80px;
+      }
+
+      .donut{
+        width:80px;
+        height:80px;
+      }
+
+      .donut::after{
+        inset:15px;
+      }
+
       .title{
         font-size:36px;
+      }
+
+      .hero-name{
+        font-size:44px;
+        line-height:1.05;
+      }
+
+      .hero-sub{
+        font-size:20px;
+        line-height:1.55;
       }
 
       .subtitle,
@@ -1059,6 +1209,10 @@
 
       .project-subtitle{
         font-size:20px;
+      }
+
+      .contact-card{
+        padding:22px;
       }
     }
   </style>
@@ -1102,6 +1256,7 @@
               <a class="btn btn-primary" href="cv.pdf" target="_blank">Download CV</a>
               <a class="btn btn-secondary" href="portfolio.pdf" target="_blank">Download Portfolio</a>
               <a class="btn btn-secondary" href="https://linkedin.com/in/wildan-saefudin" target="_blank">View LinkedIn</a>
+              <a class="btn btn-secondary" href="http://wa.me/6289653013282" target="_blank">Contact Me</a>
             </div>
 
             <div class="hero-tags">
@@ -1560,17 +1715,43 @@
           <div class="project-card reverse">
             <div class="project-media">
               <div class="dashboard-art">
-                <div class="dashboard-art-inner">
-                  <div class="art-bar"></div>
-                  <div class="art-grid">
-                    <div class="art-box"></div>
-                    <div class="art-box"></div>
+                <div class="dashboard-frame">
+                  <div class="dash-top">
+                    <div class="dash-stat"><div class="mini"></div><div class="num"></div></div>
+                    <div class="dash-stat"><div class="mini"></div><div class="num"></div></div>
+                    <div class="dash-stat"><div class="mini"></div><div class="num"></div></div>
                   </div>
-                  <div class="art-box tall"></div>
-                  <div class="art-line-row">
-                    <div class="art-line"></div>
-                    <div class="art-line wide"></div>
-                    <div class="art-line small"></div>
+
+                  <div class="dash-grid">
+                    <div class="dash-card">
+                      <div class="bars">
+                        <div class="bar b1"></div>
+                        <div class="bar b2"></div>
+                        <div class="bar b3"></div>
+                        <div class="bar b4"></div>
+                        <div class="bar b5"></div>
+                      </div>
+                      <div class="dash-bottom">
+                        <div class="dash-line w1"></div>
+                        <div class="dash-line w2"></div>
+                      </div>
+                    </div>
+
+                    <div class="dash-card">
+                      <div class="donut-wrap">
+                        <div class="donut"></div>
+                      </div>
+                      <div class="dash-bottom">
+                        <div class="dash-line w2"></div>
+                        <div class="dash-line w3"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="dash-bottom">
+                    <div class="dash-line w1"></div>
+                    <div class="dash-line w2"></div>
+                    <div class="dash-line w3"></div>
                   </div>
                 </div>
               </div>
@@ -1674,6 +1855,7 @@
             <a class="btn btn-primary" href="cv.pdf" target="_blank">Download CV</a>
             <a class="btn btn-secondary" href="portfolio.pdf" target="_blank">Download Portfolio</a>
             <a class="btn btn-secondary" href="mailto:wieldsaef@gmail.com">Email Me</a>
+            <a class="btn btn-secondary" href="http://wa.me/6289653013282" target="_blank">Contact Me</a>
           </div>
 
           <div class="contact-card">
@@ -1686,7 +1868,7 @@
             </div>
 
             <div class="linkedin-cta">
-              <strong>LinkedIn</strong>
+              <strong>LinkedIn CTA</strong>
               <a href="https://linkedin.com/in/wildan-saefudin" target="_blank">
                 Follow my profile for strategy, business planning, transformation, and performance-related updates.
               </a>

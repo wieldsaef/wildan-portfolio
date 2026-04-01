@@ -5,19 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wildan Saefudin | Portfolio</title>
   <meta name="description" content="Strategy-to-execution leader building new businesses, improving profitability, and driving transformation in mining and industrial sectors." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --navy:#173765;
-      --navy-deep:#10284b;
-      --text:#24364d;
-      --muted:#5f7085;
-      --line:#d8dee8;
-      --bg:#f5f6f8;
+      --ink:#1f2f46;
+      --ink-soft:#536379;
+      --navy:#233f69;
+      --line:#dde4ec;
+      --line-strong:#cfd8e3;
+      --bg:#f3f5f7;
+      --paper:#fbfcfd;
       --white:#ffffff;
-      --soft:#f8fafc;
-      --shadow:0 20px 50px rgba(20,40,70,.08);
-      --radius:28px;
-      --max:1100px;
+      --shadow:0 18px 40px rgba(25,40,65,.05);
+      --radius:30px;
+      --max:1120px;
     }
 
     *{
@@ -28,9 +33,12 @@
     html,body{
       margin:0;
       padding:0;
-      font-family: Inter, Arial, Helvetica, sans-serif;
       background:var(--bg);
-      color:var(--text);
+      color:var(--ink);
+      font-family:"Manrope", sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
     }
 
     body{
@@ -42,34 +50,16 @@
       text-decoration:none;
     }
 
-    .bg-parallax{
+    .page-bg{
       position:fixed;
       inset:0;
       z-index:-2;
       background:
-        radial-gradient(circle at 10% 10%, rgba(23,55,101,.06), transparent 20%),
-        radial-gradient(circle at 85% 12%, rgba(23,55,101,.05), transparent 18%),
-        radial-gradient(circle at 20% 85%, rgba(23,55,101,.04), transparent 20%),
-        linear-gradient(180deg, #f6f7f9 0%, #f2f4f7 100%);
+        radial-gradient(circle at top left, rgba(35,63,105,.035), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(35,63,105,.03), transparent 22%),
+        linear-gradient(180deg, #f5f7f9 0%, #f1f4f7 100%);
       transform:translateY(0);
-      transition:transform .08s linear;
-    }
-
-    .bg-texture{
-      position:fixed;
-      inset:0;
-      z-index:-1;
-      opacity:.18;
-      pointer-events:none;
-      background-image:
-        linear-gradient(135deg, rgba(255,255,255,.55) 25%, transparent 25%),
-        linear-gradient(225deg, rgba(255,255,255,.45) 25%, transparent 25%),
-        linear-gradient(45deg, rgba(255,255,255,.55) 25%, transparent 25%),
-        linear-gradient(315deg, rgba(255,255,255,.45) 25%, #f4f5f7 25%);
-      background-position: 12px 0, 12px 0, 0 0, 0 0;
-      background-size: 24px 24px;
-      background-repeat: repeat;
-      filter: blur(18px);
+      will-change:transform;
     }
 
     .nav{
@@ -77,10 +67,10 @@
       top:0;
       left:0;
       right:0;
-      z-index:100;
-      background:rgba(245,246,248,.84);
-      backdrop-filter: blur(14px);
-      border-bottom:1px solid rgba(23,55,101,.08);
+      z-index:50;
+      backdrop-filter: blur(10px);
+      background:rgba(243,245,247,.82);
+      border-bottom:1px solid rgba(31,47,70,.06);
     }
 
     .nav-inner{
@@ -89,14 +79,14 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
+      gap:24px;
       padding:16px 0;
-      gap:20px;
     }
 
     .brand{
-      font-size:16px;
       font-weight:800;
-      letter-spacing:.2px;
+      letter-spacing:.01em;
+      font-size:15px;
       color:var(--navy);
     }
 
@@ -104,12 +94,34 @@
       display:flex;
       gap:20px;
       flex-wrap:wrap;
-      font-size:14px;
-      color:var(--muted);
+      color:var(--ink-soft);
+      font-size:13px;
+      font-weight:600;
+      letter-spacing:.01em;
+    }
+
+    .nav-links a{
+      position:relative;
+      padding-bottom:2px;
+    }
+
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-2px;
+      width:0;
+      height:1px;
+      background:rgba(35,63,105,.45);
+      transition:width .25s ease;
     }
 
     .nav-links a:hover{
       color:var(--navy);
+    }
+
+    .nav-links a:hover::after{
+      width:100%;
     }
 
     .container{
@@ -121,102 +133,132 @@
       min-height:100vh;
       display:flex;
       align-items:center;
-      padding:110px 0 70px;
+      padding:110px 0 54px;
       position:relative;
     }
 
-    .section-card{
+    .panel{
       width:100%;
-      background:rgba(255,255,255,.82);
-      border:1px solid rgba(23,55,101,.08);
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(31,47,70,.06);
       border-radius:32px;
       box-shadow:var(--shadow);
-      padding:58px 54px;
+      backdrop-filter:blur(6px);
+      padding:60px 58px 52px;
       position:relative;
       overflow:hidden;
-      backdrop-filter: blur(6px);
     }
 
-    .section-card::before{
+    .panel::before{
       content:"";
       position:absolute;
       top:0;
       left:0;
       right:0;
       height:1px;
-      background:linear-gradient(90deg, transparent, rgba(23,55,101,.18), transparent);
+      background:linear-gradient(90deg, transparent, rgba(35,63,105,.12), transparent);
     }
 
-    .page-number{
+    .panel::after{
+      content:"";
+      position:absolute;
+      top:28px;
+      right:28px;
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(35,63,105,.035), transparent 68%);
+      pointer-events:none;
+    }
+
+    .page-no{
       position:absolute;
       top:22px;
       left:50%;
       transform:translateX(-50%);
-      font-size:14px;
-      color:var(--navy);
-      font-weight:700;
-      letter-spacing:.08em;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.18em;
+      color:rgba(35,63,105,.68);
     }
 
-    h1,h2,h3{
-      margin:0;
+    .eyebrow{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:rgba(35,63,105,.7);
+      font-weight:800;
+      margin-bottom:14px;
     }
 
     .hero-name{
-      font-size:clamp(46px, 8vw, 88px);
+      font-family:"DM Serif Display", serif;
+      font-size:clamp(50px, 8vw, 90px);
       line-height:1.02;
+      letter-spacing:-.03em;
       color:var(--navy);
-      letter-spacing:-2px;
-      margin-bottom:18px;
+      margin:0 0 18px;
     }
 
     .hero-sub{
-      font-size:clamp(20px,2.5vw,34px);
-      line-height:1.35;
-      color:var(--text);
-      max-width:850px;
-      margin-bottom:120px;
+      font-size:clamp(20px,2.5vw,33px);
+      line-height:1.42;
+      color:var(--ink);
+      max-width:880px;
+      margin:0 0 100px;
       font-weight:500;
     }
 
     .hero-meta{
+      color:var(--ink-soft);
       font-size:18px;
-      color:var(--muted);
+      font-weight:600;
     }
 
     .title{
-      font-size:clamp(34px,5vw,64px);
+      font-family:"DM Serif Display", serif;
+      font-size:clamp(34px,5vw,62px);
       line-height:1.06;
-      letter-spacing:-1.4px;
+      letter-spacing:-.02em;
       color:var(--navy);
-      margin-bottom:20px;
+      margin:0 0 14px;
     }
 
     .subtitle{
-      font-size:22px;
-      line-height:1.5;
-      color:var(--muted);
-      max-width:900px;
-      margin-bottom:34px;
+      font-size:21px;
+      line-height:1.6;
+      color:var(--ink-soft);
+      max-width:940px;
+      margin:0 0 30px;
+      font-weight:500;
     }
 
     .lead{
       font-size:18px;
-      line-height:1.7;
-      color:var(--text);
-      max-width:940px;
+      line-height:1.82;
+      color:var(--ink);
+      margin:0 0 18px;
+      max-width:950px;
+    }
+
+    .thin-divider{
+      height:1px;
+      width:100%;
+      margin:28px 0 30px;
+      background:linear-gradient(90deg, transparent, rgba(35,63,105,.18), transparent);
     }
 
     .bullet-list{
-      margin:28px 0 0;
-      padding-left:24px;
-      color:var(--text);
+      margin:0;
+      padding-left:22px;
+      color:var(--ink);
       font-size:18px;
-      line-height:1.8;
+      line-height:1.9;
     }
 
     .bullet-list li{
-      margin-bottom:10px;
+      margin-bottom:8px;
+      padding-left:4px;
     }
 
     .bold{
@@ -224,209 +266,223 @@
       color:var(--navy);
     }
 
-    .grid-2{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:28px;
-      align-items:start;
-    }
-
     .expertise-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:26px 34px;
-      margin-top:34px;
+      gap:28px 34px;
+      margin-top:20px;
     }
 
     .expertise-item{
-      padding-left:20px;
-      border-left:3px solid rgba(23,55,101,.45);
+      padding:0 0 0 20px;
+      border-left:1px solid var(--line-strong);
     }
 
     .expertise-item h3{
-      font-size:28px;
+      margin:0 0 12px;
+      font-size:27px;
+      line-height:1.25;
       color:var(--navy);
-      margin-bottom:12px;
+      font-weight:800;
+      letter-spacing:-.02em;
     }
 
     .expertise-item ul{
       margin:0;
       padding-left:22px;
-      font-size:18px;
-      line-height:1.8;
-      color:var(--text);
+      font-size:17px;
+      line-height:1.85;
+      color:var(--ink);
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
     }
 
     .scope-box{
-      background:linear-gradient(180deg, #ffffff, #f9fbfd);
-      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(251,252,253,.95));
+      border:1px solid rgba(31,47,70,.07);
       border-radius:22px;
-      padding:24px;
+      padding:24px 24px 22px;
     }
 
     .scope-box h3{
-      font-size:28px;
+      margin:0 0 14px;
+      font-size:24px;
       color:var(--navy);
-      margin-bottom:14px;
+      font-weight:800;
+      letter-spacing:-.02em;
     }
 
     .scope-box ul{
       margin:0;
       padding-left:22px;
-      font-size:18px;
-      line-height:1.8;
+      font-size:17px;
+      line-height:1.85;
     }
 
     .case-top{
-      margin-bottom:26px;
+      margin-bottom:24px;
     }
 
     .case-title{
-      font-size:clamp(28px,4vw,54px);
+      font-family:"DM Serif Display", serif;
+      font-size:clamp(30px,4vw,54px);
       line-height:1.08;
+      letter-spacing:-.02em;
       color:var(--navy);
-      margin-bottom:16px;
+      margin:0 0 10px;
     }
 
     .case-subtitle{
-      font-size:clamp(22px,3vw,34px);
+      font-size:clamp(21px,2.8vw,31px);
+      line-height:1.38;
       color:var(--navy);
-      margin-bottom:12px;
+      margin:0 0 10px;
       font-weight:700;
+      letter-spacing:-.02em;
     }
 
     .case-tagline{
-      font-size:22px;
-      color:var(--muted);
-      font-style:italic;
+      font-size:20px;
+      line-height:1.65;
+      color:var(--ink-soft);
+      margin:0;
     }
 
     .case-grid{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
-      margin-top:28px;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+      margin-top:26px;
     }
 
     .case-col{
-      background:linear-gradient(180deg, #fff, #fbfcfe);
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:24px;
-      min-height:100%;
-      position:relative;
+      background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(251,252,253,.96));
+      border:1px solid rgba(31,47,70,.07);
+      border-radius:22px;
+      padding:22px 22px 20px;
+      transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+    }
+
+    .case-col:hover{
+      transform:translateY(-3px);
+      box-shadow:0 14px 28px rgba(25,40,65,.06);
+      border-color:rgba(35,63,105,.12);
     }
 
     .case-col h3{
-      font-size:24px;
+      margin:0 0 14px;
+      font-size:22px;
       color:var(--navy);
-      margin-bottom:14px;
+      font-weight:800;
+      letter-spacing:-.02em;
     }
 
     .case-col ul{
       margin:0;
       padding-left:22px;
-      font-size:17px;
-      line-height:1.8;
-      color:var(--text);
+      font-size:16px;
+      line-height:1.82;
+      color:var(--ink);
     }
 
     .summary-box{
       display:grid;
-      gap:22px;
-      margin-top:28px;
+      gap:18px;
+      margin-top:10px;
     }
 
     .summary-row{
       display:grid;
-      grid-template-columns:180px 1fr;
+      grid-template-columns:170px 1fr;
       gap:20px;
       align-items:start;
-      padding:18px 0;
+      padding:20px 0;
       border-bottom:1px solid var(--line);
     }
 
     .summary-label{
-      font-size:24px;
+      font-size:22px;
+      line-height:1.4;
       color:var(--navy);
       font-weight:800;
+      letter-spacing:-.02em;
     }
 
     .summary-content{
-      font-size:22px;
-      line-height:1.6;
-      color:var(--text);
+      font-size:21px;
+      line-height:1.7;
+      color:var(--ink);
     }
 
     .contact-wrap{
       text-align:center;
-      padding-top:20px;
-      padding-bottom:20px;
+      padding:8px 0 14px;
     }
 
     .thank-you{
-      font-size:clamp(42px,6vw,72px);
+      margin:0 0 24px;
+      font-family:"DM Serif Display", serif;
+      font-size:clamp(42px,6vw,74px);
+      letter-spacing:-.02em;
       color:var(--navy);
-      margin-bottom:30px;
-      letter-spacing:-1.5px;
     }
 
     .contact-message{
-      font-size:24px;
-      line-height:1.7;
-      color:var(--muted);
+      font-size:23px;
+      line-height:1.75;
+      color:var(--ink-soft);
       max-width:860px;
-      margin:0 auto 70px;
+      margin:0 auto 54px;
     }
 
     .contact-card{
-      width:min(520px, 100%);
+      width:min(540px, 100%);
       margin:0 auto;
       text-align:left;
-      background:#fff;
-      border:1px solid var(--line);
+      background:rgba(255,255,255,.94);
+      border:1px solid rgba(31,47,70,.08);
       border-radius:24px;
       padding:28px;
       box-shadow:var(--shadow);
     }
 
     .contact-name{
-      font-size:30px;
-      color:var(--navy);
+      font-size:29px;
       font-weight:800;
-      margin-bottom:18px;
+      color:var(--navy);
+      margin-bottom:16px;
+      letter-spacing:-.02em;
     }
 
     .contact-item{
-      font-size:20px;
-      color:var(--text);
-      margin-bottom:12px;
-      line-height:1.6;
+      font-size:19px;
+      color:var(--ink);
+      line-height:1.7;
+      margin-bottom:10px;
     }
 
     .reveal{
       opacity:0;
-      transform:translateY(50px) scale(.985);
+      transform:translateY(24px);
       transition:
-        opacity 1s ease,
-        transform 1s cubic-bezier(.2,.65,.2,1);
+        opacity .85s ease,
+        transform .95s cubic-bezier(.22,.8,.22,1);
       will-change:transform, opacity;
     }
 
     .reveal.visible{
       opacity:1;
-      transform:translateY(0) scale(1);
-    }
-
-    .float-soft{
-      transition:transform .2s ease-out;
-      will-change:transform;
+      transform:translateY(0);
     }
 
     @media (max-width: 980px){
+      .expertise-grid,
       .grid-2,
-      .case-grid,
-      .expertise-grid{
+      .case-grid{
         grid-template-columns:1fr;
       }
 
@@ -435,12 +491,12 @@
         gap:8px;
       }
 
-      .section-card{
-        padding:52px 28px 34px;
+      .panel{
+        padding:52px 28px 40px;
       }
 
       .hero-sub{
-        margin-bottom:70px;
+        margin-bottom:68px;
       }
     }
 
@@ -456,36 +512,31 @@
 
       .section{
         min-height:auto;
-        padding:100px 0 40px;
+        padding:98px 0 34px;
       }
 
-      .title{
-        font-size:40px;
+      .hero-sub{
+        font-size:22px;
       }
 
-      .case-tagline,
+      .subtitle,
       .summary-content,
       .contact-message{
-        font-size:19px;
+        font-size:18px;
       }
 
       .lead,
       .bullet-list,
-      .scope-box ul,
       .expertise-item ul,
+      .scope-box ul,
       .case-col ul{
-        font-size:16px;
-      }
-
-      .page-number{
-        top:16px;
+        font-size:15px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="bg-parallax" id="bgParallax"></div>
-  <div class="bg-texture"></div>
+  <div class="page-bg" id="pageBg"></div>
 
   <nav class="nav">
     <div class="nav-inner">
@@ -505,12 +556,13 @@
   <main>
     <section class="section" id="cover">
       <div class="container">
-        <div class="section-card reveal float-soft">
-          <div class="hero-name">Wildan Saefudin</div>
-          <div class="hero-sub">
+        <div class="panel reveal">
+          <div class="eyebrow">Strategy to Execution</div>
+          <h1 class="hero-name">Wildan Saefudin</h1>
+          <p class="hero-sub">
             Building New Businesses, Improving Profitability, and Driving Transformation
             in Mining & Industrial Sectors
-          </div>
+          </p>
           <div class="hero-meta">Jakarta | 10+ Years Experience</div>
         </div>
       </div>
@@ -518,8 +570,8 @@
 
     <section class="section" id="overview">
       <div class="container">
-        <div class="section-card reveal float-soft">
-          <div class="page-number">02</div>
+        <div class="panel reveal">
+          <div class="page-no">02</div>
           <h2 class="title">Profile Overview</h2>
           <p class="lead">
             Strategy-to-execution leader with 10+ years of experience building new businesses,
@@ -528,6 +580,7 @@
           <p class="lead">
             Focused on delivering measurable business impact through transformation and performance improvement.
           </p>
+          <div class="thin-divider"></div>
           <ul class="bullet-list">
             <li>Build new business lines from 0 → <span class="bold">multi-million revenue</span></li>
             <li>Drive cost efficiency and improve profitability across operations</li>
@@ -540,10 +593,11 @@
 
     <section class="section" id="expertise">
       <div class="container">
-        <div class="section-card reveal float-soft">
-          <div class="page-number">03</div>
+        <div class="panel reveal">
+          <div class="page-no">03</div>
           <h2 class="title">Core Expertise</h2>
           <p class="subtitle">Core capabilities across strategy, transformation, and performance management</p>
+          <div class="thin-divider"></div>
 
           <div class="expertise-grid">
             <div class="expertise-item">
@@ -584,10 +638,14 @@
 
     <section class="section" id="leadership">
       <div class="container">
-        <div class="section-card reveal float-soft">
-          <div class="page-number">04</div>
+        <div class="panel reveal">
+          <div class="page-no">04</div>
           <h2 class="title">Strategic Leadership Experience</h2>
-          <p class="subtitle"><span class="bold">PT Makmur Lestari Primatama — Strategic Management</span><br>2022-2025</p>
+          <p class="subtitle">
+            <span class="bold">PT Makmur Lestari Primatama — Strategic Management</span><br>
+            2022-2025
+          </p>
+          <div class="thin-divider"></div>
 
           <div class="grid-2">
             <div class="scope-box">
@@ -615,13 +673,14 @@
 
     <section class="section" id="project1">
       <div class="container">
-        <div class="section-card reveal float-soft">
-          <div class="page-number">05</div>
+        <div class="panel reveal">
+          <div class="page-no">05</div>
           <div class="case-top">
             <h2 class="case-title">Key Transformation Project</h2>
             <div class="case-subtitle">New Business Line Creation & Cost Transformation (Nickel Mining)</div>
-            <div class="case-tagline">Built a new revenue-generating business from 3.6M MT low-grade nickel (IDR 50B+ CAPEX)</div>
+            <p class="case-tagline">Built a new revenue-generating business from 3.6M MT low-grade nickel (IDR 50B+ CAPEX)</p>
           </div>
+          <div class="thin-divider"></div>
 
           <div class="case-grid">
             <div class="case-col">
@@ -662,13 +721,14 @@
 
     <section class="section" id="project2">
       <div class="container">
-        <div class="section-card reveal float-soft">
-          <div class="page-number">06</div>
+        <div class="panel reveal">
+          <div class="page-no">06</div>
           <div class="case-top">
             <h2 class="case-title">Key Organization Transformation</h2>
             <div class="case-subtitle">Transforming a Founder-Dependent Organization into a System-Driven Operation</div>
-            <div class="case-tagline">Transformed a founder-dependent organization into a structured, system-driven operation</div>
+            <p class="case-tagline">Transformed a founder-dependent organization into a structured, system-driven operation</p>
           </div>
+          <div class="thin-divider"></div>
 
           <div class="case-grid">
             <div class="case-col">
@@ -709,13 +769,14 @@
 
     <section class="section" id="project3">
       <div class="container">
-        <div class="section-card reveal float-soft">
-          <div class="page-number">07</div>
+        <div class="panel reveal">
+          <div class="page-no">07</div>
           <div class="case-top">
             <h2 class="case-title">Key Commercial Launch</h2>
             <div class="case-subtitle">Built a new trading business from zero to $2.8M monthly revenue in under 3 months</div>
-            <div class="case-tagline">End-to-end commercial setup including sourcing, pricing, and execution</div>
+            <p class="case-tagline">End-to-end commercial setup including sourcing, pricing, and execution</p>
           </div>
+          <div class="thin-divider"></div>
 
           <div class="case-grid">
             <div class="case-col">
@@ -756,13 +817,14 @@
 
     <section class="section" id="project4">
       <div class="container">
-        <div class="section-card reveal float-soft">
-          <div class="page-number">08</div>
+        <div class="panel reveal">
+          <div class="page-no">08</div>
           <div class="case-top">
             <h2 class="case-title">Key Data Transformation</h2>
             <div class="case-subtitle">Enable real-time decision making by building end-to-end data and performance systems</div>
-            <div class="case-tagline">Integrating data, dashboards, and governance into a unified system</div>
+            <p class="case-tagline">Integrating data, dashboards, and governance into a unified system</p>
           </div>
+          <div class="thin-divider"></div>
 
           <div class="case-grid">
             <div class="case-col">
@@ -803,12 +865,13 @@
 
     <section class="section" id="summary">
       <div class="container">
-        <div class="section-card reveal float-soft">
-          <div class="page-number">09</div>
+        <div class="panel reveal">
+          <div class="page-no">09</div>
           <h2 class="title" style="text-align:center;">Executive Summary</h2>
-          <p class="subtitle" style="text-align:center; max-width:none;">
+          <p class="subtitle" style="text-align:center;max-width:none;">
             Strategy-to-execution leader delivering business growth, transformation, and operational excellence
           </p>
+          <div class="thin-divider"></div>
 
           <div class="summary-box">
             <div class="summary-row">
@@ -843,13 +906,13 @@
 
     <section class="section" id="contact">
       <div class="container">
-        <div class="section-card reveal float-soft">
-          <div class="page-number">10</div>
+        <div class="panel reveal">
+          <div class="page-no">10</div>
           <div class="contact-wrap">
-            <div class="thank-you">Thank you</div>
-            <div class="contact-message">
+            <h2 class="thank-you">Thank you</h2>
+            <p class="contact-message">
               Open to discussing how I can contribute to driving business growth and transformation
-            </div>
+            </p>
 
             <div class="contact-card">
               <div class="contact-name">Wildan Saefudin</div>
@@ -867,33 +930,24 @@
   </main>
 
   <script>
-    const reveals = document.querySelectorAll('.reveal');
-    const bg = document.getElementById('bgParallax');
-    const floatEls = document.querySelectorAll('.float-soft');
+    const revealEls = document.querySelectorAll('.reveal');
+    const bg = document.getElementById('pageBg');
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if(entry.isIntersecting){
           entry.target.classList.add('visible');
         }
       });
-    }, {
-      threshold: 0.16
-    });
+    }, { threshold: 0.18 });
 
-    reveals.forEach(el => observer.observe(el));
+    revealEls.forEach(el => observer.observe(el));
 
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
-
-      if (bg) {
-        bg.style.transform = `translateY(${y * 0.08}px)`;
+      if(bg){
+        bg.style.transform = `translateY(${y * 0.045}px)`;
       }
-
-      floatEls.forEach((el, index) => {
-        const speed = 0.02 + (index % 3) * 0.005;
-        el.style.transform = `translateY(${y * speed * -1}px)`;
-      });
     });
   </script>
 </body>

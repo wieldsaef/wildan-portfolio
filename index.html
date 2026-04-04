@@ -6,7 +6,7 @@
   <title>Wildan Saefudin | Strategy-to-Execution Leader</title>
   <meta
     name="description"
-    content="Wildan Saefudin — Strategy-to-Execution Leader driving business growth, transformation, profitability, and performance systems across mining and industrial sectors."
+    content="Wildan Saefudin — Strategy-to-Execution Leader building business growth, transformation, profitability, and performance systems across mining and industrial sectors."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,17 +20,22 @@
     :root{
       --navy:#18324f;
       --navy-2:#24466f;
-      --ink:#233247;
+      --ink:#223348;
+      --ink-soft:#31455f;
       --muted:#66778d;
-      --muted-2:#8b98aa;
-      --bg:#f4f7fa;
+      --muted-2:#8c99aa;
+      --bg:#f3f6fa;
+      --bg-2:#eef3f8;
       --paper:#ffffff;
       --panel:#fbfcfe;
-      --line:#d9e2ec;
-      --line-2:#cfd8e3;
       --soft:#eff4f9;
-      --shadow:0 20px 44px rgba(20,35,60,.07);
-      --shadow-soft:0 10px 24px rgba(20,35,60,.05);
+      --soft-2:#f5f8fc;
+      --line:#d8e1eb;
+      --line-2:#cbd6e2;
+      --accent:#21456d;
+      --accent-soft:rgba(33,69,109,.08);
+      --shadow:0 20px 48px rgba(20,35,60,.07);
+      --shadow-soft:0 12px 28px rgba(20,35,60,.05);
       --radius:30px;
       --radius-sm:20px;
       --max:1180px;
@@ -69,10 +74,10 @@
     .page-bg{
       position:fixed;
       inset:0;
-      z-index:-2;
+      z-index:-3;
       background:
-        radial-gradient(circle at 0% 0%, rgba(36,70,111,.05), transparent 26%),
-        radial-gradient(circle at 100% 14%, rgba(36,70,111,.04), transparent 23%),
+        radial-gradient(circle at 0% 0%, rgba(36,70,111,.05), transparent 28%),
+        radial-gradient(circle at 100% 10%, rgba(36,70,111,.04), transparent 24%),
         linear-gradient(180deg, #f8fafc 0%, #f2f5f8 100%);
     }
 
@@ -86,8 +91,8 @@
       top:0;
       left:0;
       right:0;
-      z-index:90;
-      background:rgba(244,247,250,.86);
+      z-index:100;
+      background:rgba(243,246,250,.88);
       backdrop-filter:blur(14px);
       border-bottom:1px solid rgba(24,50,79,.06);
     }
@@ -99,30 +104,33 @@
       justify-content:space-between;
       align-items:center;
       gap:20px;
-      padding:15px 0;
+      padding:14px 0;
     }
 
     .brand{
       color:var(--navy);
-      font-size:15px;
+      font-size:14px;
       font-weight:800;
-      letter-spacing:.05em;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      white-space:nowrap;
     }
 
     .nav-links{
       display:flex;
       flex-wrap:wrap;
       gap:16px;
+      color:var(--muted);
       font-size:12px;
       font-weight:700;
-      letter-spacing:.12em;
+      letter-spacing:.1em;
       text-transform:uppercase;
-      color:var(--muted);
     }
 
     .nav-links a{
       position:relative;
       padding-bottom:2px;
+      transition:.22s ease;
     }
 
     .nav-links a::after{
@@ -132,8 +140,8 @@
       bottom:-4px;
       width:0;
       height:1px;
-      background:rgba(24,50,79,.38);
-      transition:width .25s ease;
+      background:rgba(24,50,79,.35);
+      transition:width .22s ease;
     }
 
     .nav-links a:hover{
@@ -144,12 +152,16 @@
       width:100%;
     }
 
-    .hero,
-    .section{
+    .section,
+    .hero{
+      padding:104px 0 44px;
       min-height:100vh;
       display:flex;
       align-items:center;
-      padding:104px 0 44px;
+    }
+
+    .section{
+      min-height:auto;
     }
 
     .panel{
@@ -159,10 +171,9 @@
       border:1px solid rgba(24,50,79,.07);
       border-radius:32px;
       box-shadow:var(--shadow);
-      padding:56px 48px 42px;
+      padding:54px 48px 42px;
       overflow:hidden;
       backdrop-filter:blur(8px);
-      line-height:1.72;
     }
 
     .panel::before{
@@ -172,18 +183,17 @@
       right:0;
       top:0;
       height:1px;
-      background:linear-gradient(90deg, transparent, rgba(24,50,79,.14), transparent);
+      background:linear-gradient(90deg, transparent, rgba(24,50,79,.16), transparent);
     }
 
     .page-no{
       position:absolute;
       top:20px;
-      left:50%;
-      transform:translateX(-50%);
+      right:26px;
+      color:rgba(24,50,79,.58);
       font-size:12px;
-      letter-spacing:.18em;
+      letter-spacing:.16em;
       font-weight:800;
-      color:rgba(24,50,79,.7);
     }
 
     .eyebrow{
@@ -202,49 +212,82 @@
       content:"";
       width:28px;
       height:1px;
-      background:rgba(24,50,79,.3);
+      background:rgba(24,50,79,.28);
       display:block;
     }
 
-    .title{
-      font-size:clamp(34px, 4vw, 52px);
-      line-height:1.14;
-      letter-spacing:-0.03em;
-      color:var(--navy);
-      margin:0 0 16px;
+    .section-header{
+      display:grid;
+      grid-template-columns:220px 1fr;
+      gap:28px;
+      align-items:start;
+      margin-bottom:28px;
+    }
+
+    .section-guide{
+      padding:18px;
+      border-radius:20px;
+      background:linear-gradient(180deg,#fbfdff,#f5f8fc);
+      border:1px solid rgba(24,50,79,.08);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .section-guide .mini{
+      display:block;
+      color:var(--muted);
+      font-size:11px;
       font-weight:800;
-      max-width:900px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+
+    .section-guide strong{
+      display:block;
+      color:var(--navy);
+      font-size:18px;
+      line-height:1.45;
+      letter-spacing:-0.02em;
+      font-weight:800;
+      margin-bottom:8px;
+    }
+
+    .section-guide span{
+      display:block;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.7;
+      font-weight:600;
+    }
+
+    .title-wrap{
+      max-width:820px;
+    }
+
+    .title{
+      color:var(--navy);
+      font-size:clamp(34px,4vw,50px);
+      line-height:1.12;
+      letter-spacing:-0.03em;
+      font-weight:800;
+      margin:0 0 14px;
     }
 
     .subtitle{
-      font-size:20px;
-      line-height:1.74;
-      letter-spacing:-0.01em;
       color:var(--muted);
-      margin:0 0 26px;
-      max-width:760px;
-      font-weight:500;
-    }
-
-    .lead{
-      font-size:17px;
-      line-height:1.9;
+      font-size:19px;
+      line-height:1.76;
       letter-spacing:-0.01em;
-      color:var(--ink);
-      margin:0 0 16px;
+      margin:0;
+      font-weight:500;
       max-width:760px;
     }
 
     .hairline{
       width:100%;
       height:1px;
-      margin:30px 0;
+      margin:28px 0;
       background:linear-gradient(90deg, transparent, rgba(24,50,79,.16), transparent);
-    }
-
-    .section-stack{
-      display:grid;
-      gap:28px;
     }
 
     .content-stack{
@@ -252,21 +295,34 @@
       gap:22px;
     }
 
-    .bold{
-      color:var(--navy);
-      font-weight:800;
+    .section-stack{
+      display:grid;
+      gap:28px;
+    }
+
+    .lead{
+      color:var(--ink);
+      font-size:17px;
+      line-height:1.9;
+      letter-spacing:-0.01em;
+      margin:0;
     }
 
     .muted{
       color:var(--muted);
     }
 
+    .bold{
+      color:var(--navy);
+      font-weight:800;
+    }
+
     .section-label{
       display:block;
-      color:rgba(24,50,79,.58);
+      color:rgba(24,50,79,.6);
       font-size:12px;
       font-weight:800;
-      letter-spacing:.18em;
+      letter-spacing:.16em;
       text-transform:uppercase;
       margin-bottom:12px;
     }
@@ -278,7 +334,7 @@
       padding:9px 12px;
       border-radius:999px;
       border:1px solid rgba(24,50,79,.1);
-      background:rgba(255,255,255,.76);
+      background:rgba(255,255,255,.82);
       color:var(--muted);
       font-size:13px;
       font-weight:700;
@@ -291,18 +347,116 @@
       gap:10px;
     }
 
-    .reveal{
-      opacity:0;
-      transform:translateY(22px);
-      transition:
-        opacity .8s ease,
-        transform .9s cubic-bezier(.22,.8,.22,1);
-      will-change:transform, opacity;
+    .impact-strip{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:999px;
+      background:linear-gradient(180deg, rgba(24,50,79,.95), rgba(24,50,79,.88));
+      color:#fff;
+      font-size:13px;
+      line-height:1.5;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      box-shadow:0 14px 28px rgba(24,50,79,.14);
+      margin-bottom:18px;
     }
 
-    .reveal.visible{
-      opacity:1;
-      transform:translateY(0);
+    .impact-strip .dot{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:#fff;
+      opacity:.85;
+      flex:0 0 7px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:36px;
+      align-items:center;
+    }
+
+    .hero-name{
+      color:var(--navy);
+      font-size:clamp(48px,6vw,72px);
+      line-height:1.02;
+      letter-spacing:-0.05em;
+      font-weight:800;
+      margin:0 0 10px;
+      max-width:760px;
+    }
+
+    .hero-role{
+      color:var(--navy);
+      font-size:clamp(24px,2.7vw,34px);
+      line-height:1.34;
+      letter-spacing:-0.03em;
+      font-weight:700;
+      margin:0 0 14px;
+      max-width:820px;
+    }
+
+    .hero-desc{
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.9;
+      letter-spacing:-0.01em;
+      margin:0 0 20px;
+      max-width:760px;
+    }
+
+    .hero-reading{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:12px;
+      margin:26px 0 18px;
+    }
+
+    .reading-step{
+      padding:14px;
+      border-radius:18px;
+      border:1px solid rgba(24,50,79,.08);
+      background:linear-gradient(180deg,#fff,#fbfcfe);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .reading-step .n{
+      display:block;
+      color:rgba(24,50,79,.5);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+
+    .reading-step .t{
+      color:var(--navy);
+      font-size:16px;
+      line-height:1.55;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      display:block;
+      margin-bottom:4px;
+    }
+
+    .reading-step .d{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.65;
+      font-weight:600;
+      display:block;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:18px;
     }
 
     .btn{
@@ -316,15 +470,15 @@
       font-weight:800;
       letter-spacing:.08em;
       text-transform:uppercase;
-      transition:.25s ease;
       border:1px solid transparent;
+      transition:.24s ease;
       cursor:pointer;
     }
 
     .btn-primary{
       background:var(--navy);
       color:#fff;
-      box-shadow:0 10px 22px rgba(24,50,79,.12);
+      box-shadow:0 12px 24px rgba(24,50,79,.12);
     }
 
     .btn-primary:hover{
@@ -333,7 +487,7 @@
     }
 
     .btn-secondary{
-      background:rgba(255,255,255,.84);
+      background:rgba(255,255,255,.88);
       color:var(--navy);
       border-color:rgba(24,50,79,.1);
     }
@@ -343,67 +497,41 @@
       background:#fff;
     }
 
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.18fr .82fr;
-      gap:34px;
-      align-items:center;
-    }
-
-    .hero-name{
-      font-size:clamp(46px, 6vw, 68px);
-      line-height:1.02;
-      letter-spacing:-0.04em;
+    .btn-ghost{
+      background:transparent;
       color:var(--navy);
-      margin:0 0 14px;
-      font-weight:800;
-      max-width:700px;
+      border-color:rgba(24,50,79,.12);
     }
 
-    .hero-sub{
-      font-size:clamp(20px,2.2vw,30px);
-      line-height:1.5;
-      letter-spacing:-0.02em;
-      color:var(--ink);
-      margin:0 0 16px;
-      max-width:760px;
-      font-weight:600;
-    }
-
-    .hero-desc{
-      font-size:17px;
-      line-height:1.92;
-      letter-spacing:-0.01em;
-      color:var(--muted);
-      margin:0 0 22px;
-      max-width:760px;
-    }
-
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-bottom:22px;
+    .btn-ghost:hover{
+      transform:translateY(-2px);
+      background:#fff;
     }
 
     .hero-proof{
       display:grid;
       grid-template-columns:repeat(3, 1fr);
       gap:14px;
-      margin-top:26px;
+      margin-top:24px;
     }
 
     .proof-card{
-      padding:16px 16px 15px;
+      padding:18px 18px 16px;
       background:linear-gradient(180deg,#fff,#fbfcfe);
       border:1px solid rgba(24,50,79,.08);
-      border-radius:18px;
+      border-radius:20px;
       box-shadow:var(--shadow-soft);
+    }
+
+    .proof-card.featured{
+      background:linear-gradient(180deg, rgba(24,50,79,.96), rgba(24,50,79,.88));
+      border-color:transparent;
+      box-shadow:0 18px 30px rgba(24,50,79,.14);
     }
 
     .proof-card .value{
       color:var(--navy);
-      font-size:26px;
+      font-size:28px;
       line-height:1;
       letter-spacing:-0.03em;
       font-weight:800;
@@ -413,26 +541,38 @@
     .proof-card .label{
       color:var(--muted);
       font-size:13px;
-      line-height:1.6;
-      letter-spacing:-0.01em;
+      line-height:1.65;
       font-weight:700;
+    }
+
+    .proof-card.featured .value,
+    .proof-card.featured .label{
+      color:#fff;
     }
 
     .hero-visual{
       position:relative;
       display:flex;
       justify-content:flex-end;
-      padding-left:24px;
+      padding-left:20px;
+    }
+
+    .hero-photo-shell{
+      width:100%;
+      max-width:390px;
+      padding:18px;
+      border-radius:32px;
+      background:linear-gradient(180deg,#ecf2f8,#f9fbfd);
+      border:1px solid rgba(24,50,79,.07);
+      box-shadow:var(--shadow);
     }
 
     .hero-photo-wrap{
       width:100%;
-      max-width:370px;
-      border-radius:28px;
+      border-radius:26px;
       overflow:hidden;
-      background:linear-gradient(180deg,#eef3f8,#fafbfd);
-      border:1px solid rgba(24,50,79,.08);
-      box-shadow:0 18px 36px rgba(20,35,60,.08);
+      background:#e7edf4;
+      border:1px solid rgba(24,50,79,.06);
     }
 
     .hero-photo{
@@ -447,14 +587,25 @@
       border:1px solid rgba(24,50,79,.08);
       border-radius:18px;
       box-shadow:var(--shadow-soft);
-      padding:12px 14px;
-      min-width:160px;
+      padding:14px 16px;
+      min-width:170px;
+      max-width:220px;
+    }
+
+    .floating-card .mini{
+      display:block;
+      color:rgba(24,50,79,.5);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      margin-bottom:6px;
     }
 
     .floating-card .k{
       display:block;
       color:var(--navy);
-      font-size:18px;
+      font-size:19px;
       font-weight:800;
       letter-spacing:-0.02em;
       margin-bottom:4px;
@@ -463,17 +614,148 @@
     .floating-card .t{
       color:var(--muted);
       font-size:12px;
-      line-height:1.45;
+      line-height:1.55;
       font-weight:700;
     }
 
-    .fc-1{ left:0; top:9%; }
-    .fc-2{ right:0; top:54%; transform:translateY(-50%); }
-    .fc-3{ left:8%; bottom:3%; }
+    .fc-1{ left:0; top:8%; }
+    .fc-2{ right:0; top:50%; transform:translateY(-50%); }
+    .fc-3{ left:6%; bottom:2%; }
+
+    .scan-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .scan-card{
+      padding:24px;
+      border-radius:24px;
+      border:1px solid rgba(24,50,79,.08);
+      background:linear-gradient(180deg,#fff,#fbfcfe);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .scan-card h3{
+      margin:0 0 14px;
+      color:var(--navy);
+      font-size:24px;
+      line-height:1.3;
+      letter-spacing:-0.02em;
+      font-weight:800;
+    }
+
+    .scan-list{
+      display:grid;
+      gap:12px;
+    }
+
+    .scan-item{
+      display:grid;
+      grid-template-columns:38px 1fr;
+      gap:14px;
+      align-items:start;
+      padding:14px 0;
+      border-bottom:1px solid rgba(24,50,79,.08);
+    }
+
+    .scan-item:last-child{
+      border-bottom:none;
+      padding-bottom:0;
+    }
+
+    .scan-icon{
+      width:38px;
+      height:38px;
+      border-radius:14px;
+      background:rgba(24,50,79,.06);
+      color:var(--navy);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:14px;
+      font-weight:800;
+      border:1px solid rgba(24,50,79,.08);
+    }
+
+    .scan-item strong{
+      display:block;
+      color:var(--navy);
+      font-size:17px;
+      line-height:1.55;
+      font-weight:800;
+      margin-bottom:4px;
+    }
+
+    .scan-item span{
+      display:block;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.75;
+      font-weight:600;
+    }
+
+    .priority-stack{
+      display:grid;
+      gap:12px;
+    }
+
+    .priority-card{
+      padding:18px;
+      border-radius:20px;
+      border:1px solid rgba(24,50,79,.08);
+      background:linear-gradient(180deg,#fff,#fbfcfe);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .priority-card.featured{
+      background:linear-gradient(180deg, rgba(24,50,79,.95), rgba(24,50,79,.9));
+      border-color:transparent;
+      box-shadow:0 18px 30px rgba(24,50,79,.14);
+    }
+
+    .priority-card .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:8px;
+    }
+
+    .priority-card .ey{
+      color:rgba(24,50,79,.52);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    .priority-card .big{
+      color:var(--navy);
+      font-size:30px;
+      line-height:1;
+      letter-spacing:-0.03em;
+      font-weight:800;
+      margin-bottom:8px;
+    }
+
+    .priority-card .desc{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.75;
+      font-weight:600;
+    }
+
+    .priority-card.featured .ey,
+    .priority-card.featured .big,
+    .priority-card.featured .desc{
+      color:#fff;
+    }
 
     .overview-grid{
       display:grid;
-      grid-template-columns:1.04fr .96fr;
+      grid-template-columns:1.02fr .98fr;
       gap:32px;
       align-items:start;
     }
@@ -505,10 +787,10 @@
     .bullet-list{
       margin:0;
       padding-left:22px;
+      color:var(--ink);
       font-size:17px;
       line-height:1.9;
       letter-spacing:-0.01em;
-      color:var(--ink);
     }
 
     .bullet-list li{
@@ -516,69 +798,42 @@
       padding-left:4px;
     }
 
-    .mini-grid-3{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:16px;
-    }
-
-    .mini-grid-2{
+    .fit-grid{
       display:grid;
       grid-template-columns:repeat(2, 1fr);
       gap:18px;
     }
 
-    .info-card{
+    .fit-card{
       padding:22px;
-      border:1px solid rgba(24,50,79,.08);
       border-radius:22px;
-      background:linear-gradient(180deg,#fff,#fbfcfe);
-      box-shadow:var(--shadow-soft);
-    }
-
-    .info-card h3{
-      margin:0 0 10px;
-      color:var(--navy);
-      font-size:22px;
-      line-height:1.4;
-      letter-spacing:-0.02em;
-      font-weight:800;
-    }
-
-    .info-card p{
-      margin:0;
-      color:var(--ink);
-      font-size:16px;
-      line-height:1.82;
-      letter-spacing:-0.01em;
-    }
-
-    .best-fit-card{
-      padding:20px;
       border:1px solid rgba(24,50,79,.08);
-      border-radius:20px;
       background:linear-gradient(180deg,#fff,#fbfcfe);
       box-shadow:var(--shadow-soft);
       display:grid;
-      gap:10px;
+      gap:8px;
     }
 
-    .best-fit-card strong{
-      display:block;
+    .fit-card strong{
       color:var(--navy);
-      font-size:18px;
+      font-size:20px;
       line-height:1.45;
       letter-spacing:-0.02em;
       font-weight:800;
-      margin-bottom:0;
+      display:block;
     }
 
-    .best-fit-card span{
-      display:block;
+    .fit-card span{
       color:var(--muted);
-      font-size:14px;
-      line-height:1.75;
+      font-size:15px;
+      line-height:1.78;
       font-weight:600;
+      display:block;
+    }
+
+    .fit-card.highlight{
+      background:linear-gradient(180deg,#f8fbff,#eef4fb);
+      border-color:rgba(24,50,79,.12);
     }
 
     .expertise-flow{
@@ -586,52 +841,39 @@
       gap:24px;
     }
 
+    .expertise-block{
+      display:grid;
+      gap:14px;
+    }
+
     .expertise-row{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:24px 28px;
+      gap:18px;
     }
 
     .expertise-item{
       display:flex;
       gap:14px;
       align-items:flex-start;
-      padding:20px;
-      border:1px solid rgba(24,50,79,.07);
+      padding:22px;
+      border:1px solid rgba(24,50,79,.08);
       border-radius:22px;
       background:linear-gradient(180deg,#fff,#fbfcfe);
       box-shadow:var(--shadow-soft);
     }
 
-    .expertise-item h3{
-      margin:0 0 10px;
-      font-size:22px;
-      line-height:1.4;
-      letter-spacing:-0.02em;
-      color:var(--navy);
-      font-weight:800;
-    }
-
-    .expertise-item ul{
-      margin:0;
-      padding-left:20px;
-      font-size:16px;
-      line-height:1.82;
-      letter-spacing:-0.01em;
-      color:var(--ink);
-    }
-
     .icon-chip{
-      width:38px;
-      height:38px;
-      border-radius:12px;
+      width:40px;
+      height:40px;
+      border-radius:14px;
       border:1px solid rgba(24,50,79,.08);
       background:linear-gradient(180deg,#fff,#f7faff);
       display:inline-flex;
       align-items:center;
       justify-content:center;
       box-shadow:var(--shadow-soft);
-      flex:0 0 38px;
+      flex:0 0 40px;
     }
 
     .icon-chip svg{
@@ -644,17 +886,93 @@
       stroke-linejoin:round;
     }
 
+    .expertise-item h3{
+      margin:0 0 10px;
+      color:var(--navy);
+      font-size:22px;
+      line-height:1.38;
+      letter-spacing:-0.02em;
+      font-weight:800;
+    }
+
+    .expertise-item p{
+      margin:0 0 12px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.78;
+      font-weight:600;
+    }
+
+    .expertise-item ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--ink);
+      font-size:15px;
+      line-height:1.8;
+    }
+
+    .wins-grid{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:14px;
+    }
+
+    .win-card{
+      padding:20px 18px;
+      border-radius:22px;
+      border:1px solid rgba(24,50,79,.08);
+      background:linear-gradient(180deg,#fff,#fbfcfe);
+      box-shadow:var(--shadow-soft);
+      display:grid;
+      gap:8px;
+    }
+
+    .win-card.featured{
+      background:linear-gradient(180deg, rgba(24,50,79,.95), rgba(24,50,79,.88));
+      border-color:transparent;
+      box-shadow:0 18px 30px rgba(24,50,79,.14);
+    }
+
+    .win-card .mini-label{
+      color:rgba(24,50,79,.56);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    .win-card .mini-value{
+      color:var(--navy);
+      font-size:28px;
+      line-height:1.1;
+      letter-spacing:-0.03em;
+      font-weight:800;
+    }
+
+    .win-card .mini-desc{
+      color:var(--ink);
+      font-size:14px;
+      line-height:1.72;
+      font-weight:600;
+    }
+
+    .win-card.featured .mini-label,
+    .win-card.featured .mini-value,
+    .win-card.featured .mini-desc{
+      color:#fff;
+    }
+
     .grid-2{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:22px;
+      gap:20px;
     }
 
     .scope-box{
       background:linear-gradient(180deg,#fff,#fbfcfe);
       border:1px solid rgba(24,50,79,.08);
-      border-radius:22px;
-      padding:22px;
+      border-radius:24px;
+      padding:24px;
       box-shadow:var(--shadow-soft);
       display:grid;
       gap:14px;
@@ -663,8 +981,8 @@
     .scope-box h3{
       margin:0;
       color:var(--navy);
-      font-size:22px;
-      line-height:1.4;
+      font-size:24px;
+      line-height:1.35;
       letter-spacing:-0.02em;
       font-weight:800;
     }
@@ -672,16 +990,16 @@
     .scope-box ul{
       margin:0;
       padding-left:20px;
+      color:var(--ink);
       font-size:16px;
       line-height:1.84;
-      color:var(--ink);
     }
 
     .leadership-footprint{
       display:grid;
       grid-template-columns:repeat(5, 1fr);
       gap:14px;
-      margin-top:8px;
+      margin-top:4px;
     }
 
     .footprint-card{
@@ -692,10 +1010,15 @@
       box-shadow:var(--shadow-soft);
     }
 
+    .footprint-card.featured{
+      background:linear-gradient(180deg,#f8fbff,#edf4fb);
+      border-color:rgba(24,50,79,.12);
+    }
+
     .footprint-card .big{
       color:var(--navy);
       font-size:24px;
-      line-height:1.1;
+      line-height:1.05;
       letter-spacing:-0.03em;
       font-weight:800;
       margin-bottom:8px;
@@ -717,36 +1040,37 @@
     .timeline::before{
       content:"";
       position:absolute;
-      left:115px;
-      top:8px;
-      bottom:8px;
+      left:118px;
+      top:10px;
+      bottom:10px;
       width:1px;
-      background:linear-gradient(180deg, rgba(24,50,79,.18), rgba(24,50,79,.08));
+      background:linear-gradient(180deg, rgba(24,50,79,.2), rgba(24,50,79,.06));
     }
 
     .timeline-item{
+      position:relative;
       display:grid;
       grid-template-columns:100px 1fr;
-      gap:26px;
+      gap:28px;
       align-items:start;
-      position:relative;
     }
 
     .timeline-year{
       color:var(--navy);
       font-size:13px;
-      font-weight:800;
-      letter-spacing:.14em;
+      line-height:1.5;
+      letter-spacing:.16em;
       text-transform:uppercase;
+      font-weight:800;
       padding-top:4px;
     }
 
     .timeline-card{
       position:relative;
-      background:linear-gradient(180deg,#fff,#fbfcfe);
+      padding:22px;
+      border-radius:22px;
       border:1px solid rgba(24,50,79,.08);
-      border-radius:20px;
-      padding:20px;
+      background:linear-gradient(180deg,#fff,#fbfcfe);
       box-shadow:var(--shadow-soft);
       display:grid;
       gap:8px;
@@ -755,7 +1079,7 @@
     .timeline-card::before{
       content:"";
       position:absolute;
-      left:-17px;
+      left:-18px;
       top:24px;
       width:10px;
       height:10px;
@@ -766,17 +1090,17 @@
 
     .timeline-role{
       color:var(--navy);
-      font-size:19px;
-      line-height:1.45;
+      font-size:20px;
+      line-height:1.4;
       letter-spacing:-0.02em;
       font-weight:800;
     }
 
     .timeline-company{
       color:var(--muted);
-      font-size:14px;
-      line-height:1.7;
-      letter-spacing:.08em;
+      font-size:13px;
+      line-height:1.65;
+      letter-spacing:.12em;
       text-transform:uppercase;
       font-weight:700;
     }
@@ -785,31 +1109,30 @@
       margin:0;
       color:var(--ink);
       font-size:15px;
-      line-height:1.82;
-      letter-spacing:-0.01em;
+      line-height:1.8;
     }
 
     .metrics-group{
       display:grid;
-      gap:30px;
+      gap:28px;
     }
 
     .metrics-cluster{
-      padding:20px;
+      padding:22px;
       border-radius:24px;
-      background:linear-gradient(180deg,#ffffff,#f8fbff);
-      border:1px solid rgba(24,50,79,.06);
+      border:1px solid rgba(24,50,79,.08);
+      background:linear-gradient(180deg,#fff,#fbfcfe);
       box-shadow:var(--shadow-soft);
       display:grid;
       gap:16px;
     }
 
     .cluster-title{
+      color:rgba(24,50,79,.62);
       font-size:12px;
-      letter-spacing:.18em;
+      letter-spacing:.16em;
       text-transform:uppercase;
       font-weight:800;
-      color:rgba(24,50,79,.62);
     }
 
     .metrics-grid{
@@ -830,8 +1153,14 @@
       justify-content:space-between;
     }
 
+    .metric-box.featured{
+      background:linear-gradient(180deg, rgba(24,50,79,.95), rgba(24,50,79,.88));
+      border-color:transparent;
+      box-shadow:0 20px 32px rgba(24,50,79,.14);
+    }
+
     .metric-label{
-      color:var(--muted);
+      color:rgba(24,50,79,.54);
       font-size:12px;
       font-weight:800;
       letter-spacing:.16em;
@@ -840,57 +1169,25 @@
 
     .metric-value{
       color:var(--navy);
-      font-size:clamp(34px, 4vw, 50px);
+      font-size:clamp(34px,4vw,50px);
       line-height:1;
-      letter-spacing:-0.03em;
+      letter-spacing:-0.04em;
       font-weight:800;
-      margin:10px 0 10px;
+      margin:12px 0 10px;
     }
 
     .metric-desc{
       color:var(--ink);
       font-size:16px;
-      line-height:1.84;
+      line-height:1.8;
       letter-spacing:-0.01em;
-    }
-
-    .wins-grid{
-      display:grid;
-      grid-template-columns:repeat(4, 1fr);
-      gap:14px;
-    }
-
-    .win-card{
-      padding:18px;
-      border-radius:20px;
-      border:1px solid rgba(24,50,79,.08);
-      background:linear-gradient(180deg,#fff,#fbfcfe);
-      box-shadow:var(--shadow-soft);
-      display:grid;
-      gap:8px;
-    }
-
-    .win-card .mini-label{
-      color:var(--muted);
-      font-size:11px;
-      font-weight:800;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-    }
-
-    .win-card .mini-value{
-      color:var(--navy);
-      font-size:25px;
-      line-height:1.1;
-      letter-spacing:-0.03em;
-      font-weight:800;
-    }
-
-    .win-card .mini-desc{
-      color:var(--ink);
-      font-size:14px;
-      line-height:1.75;
       font-weight:600;
+    }
+
+    .metric-box.featured .metric-label,
+    .metric-box.featured .metric-value,
+    .metric-box.featured .metric-desc{
+      color:#fff;
     }
 
     .projects-wrap{
@@ -900,7 +1197,7 @@
 
     .project-card{
       border:1px solid rgba(24,50,79,.08);
-      border-radius:26px;
+      border-radius:28px;
       background:linear-gradient(180deg,#fff,#fbfcfe);
       box-shadow:var(--shadow-soft);
       overflow:hidden;
@@ -917,11 +1214,11 @@
     .project-photo,
     .dashboard-art{
       width:100%;
-      aspect-ratio:4/5;
-      border-radius:18px;
+      aspect-ratio:4 / 5;
+      border-radius:20px;
+      overflow:hidden;
       border:1px solid rgba(24,50,79,.06);
       background:#eef3f8;
-      overflow:hidden;
     }
 
     .project-photo{
@@ -956,7 +1253,7 @@
     .project-title{
       color:var(--navy);
       font-size:30px;
-      line-height:1.18;
+      line-height:1.15;
       letter-spacing:-0.03em;
       font-weight:800;
       margin:0 0 8px;
@@ -965,7 +1262,7 @@
     .project-subtitle{
       color:var(--navy);
       font-size:22px;
-      line-height:1.48;
+      line-height:1.45;
       letter-spacing:-0.02em;
       font-weight:700;
       margin:0 0 10px;
@@ -974,7 +1271,7 @@
     .project-tagline{
       color:var(--muted);
       font-size:17px;
-      line-height:1.78;
+      line-height:1.8;
       letter-spacing:-0.01em;
       margin:0 0 16px;
       max-width:820px;
@@ -1001,13 +1298,13 @@
       padding:14px;
       border-radius:18px;
       border:1px solid rgba(24,50,79,.08);
-      background:rgba(255,255,255,.75);
+      background:rgba(255,255,255,.82);
     }
 
     .project-summary-box strong{
       display:block;
       color:var(--navy);
-      font-size:13px;
+      font-size:12px;
       line-height:1.6;
       letter-spacing:.12em;
       text-transform:uppercase;
@@ -1018,86 +1315,58 @@
       display:block;
       color:var(--ink);
       font-size:15px;
-      line-height:1.75;
+      line-height:1.72;
       font-weight:600;
     }
 
     .project-details{
       border-top:1px solid rgba(24,50,79,.07);
-      padding:0 18px 18px;
-    }
-
-    .project-details details{
-      border:1px solid rgba(24,50,79,.08);
-      border-radius:18px;
-      background:#fff;
-      overflow:hidden;
-      margin-top:14px;
-      transition:all .3s ease;
-    }
-
-    .project-details summary{
-      list-style:none;
-      cursor:pointer;
-      padding:16px 18px;
-      color:var(--navy);
-      font-size:14px;
-      font-weight:800;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      user-select:none;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-
-    .project-details summary::-webkit-details-marker{
-      display:none;
-    }
-
-    .project-details summary::after{
-      content:"+";
-      font-size:18px;
-      font-weight:800;
-      transition:transform .3s ease;
-    }
-
-    .project-details details[open] summary::after{
-      content:"−";
+      padding:18px;
     }
 
     .project-columns{
       display:grid;
       grid-template-columns:repeat(3, 1fr);
       gap:14px;
-      padding:0 18px 18px;
     }
 
     .project-col{
-      border:1px solid rgba(24,50,79,.08);
-      border-radius:18px;
       padding:18px;
-      background:rgba(255,255,255,.72);
+      border-radius:18px;
+      border:1px solid rgba(24,50,79,.08);
+      background:linear-gradient(180deg,#fff,#fcfdff);
       display:grid;
       gap:10px;
+    }
+
+    .project-col.featured{
+      background:linear-gradient(180deg,#f8fbff,#eef4fb);
+      border-color:rgba(24,50,79,.12);
     }
 
     .project-col h3{
       margin:0;
       color:var(--navy);
       font-size:18px;
-      line-height:1.4;
+      line-height:1.38;
       letter-spacing:-0.02em;
       font-weight:800;
     }
 
+    .project-col p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.75;
+      font-weight:600;
+    }
+
     .project-col ul{
       margin:0;
-      padding-left:20px;
+      padding-left:18px;
       color:var(--ink);
       font-size:15px;
-      line-height:1.82;
-      letter-spacing:-0.01em;
+      line-height:1.8;
     }
 
     .dashboard-art{
@@ -1268,6 +1537,36 @@
       align-items:start;
     }
 
+    .cta-panel{
+      display:grid;
+      gap:18px;
+      align-content:start;
+    }
+
+    .cta-title{
+      color:var(--navy);
+      font-size:clamp(36px, 5vw, 56px);
+      line-height:1.08;
+      letter-spacing:-0.03em;
+      font-weight:800;
+      margin:0;
+    }
+
+    .cta-text{
+      color:var(--muted);
+      font-size:20px;
+      line-height:1.78;
+      letter-spacing:-0.01em;
+      margin:0;
+      max-width:560px;
+    }
+
+    .cta-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
     .contact-card{
       background:linear-gradient(180deg,#fff,#fbfcfe);
       border:1px solid rgba(24,50,79,.08);
@@ -1278,8 +1577,8 @@
 
     .contact-name{
       color:var(--navy);
-      font-size:26px;
-      line-height:1.4;
+      font-size:28px;
+      line-height:1.35;
       letter-spacing:-0.02em;
       font-weight:800;
       margin-bottom:14px;
@@ -1288,7 +1587,7 @@
     .contact-item{
       color:var(--ink);
       font-size:17px;
-      line-height:1.75;
+      line-height:1.78;
       letter-spacing:-0.01em;
       margin-bottom:8px;
       word-break:break-word;
@@ -1299,7 +1598,7 @@
       padding:16px 18px;
       border-radius:18px;
       border:1px solid rgba(24,50,79,.08);
-      background:rgba(247,250,253,.9);
+      background:rgba(247,250,253,.94);
     }
 
     .linkedin-cta strong{
@@ -1320,38 +1619,6 @@
       word-break:break-word;
     }
 
-    .cta-panel{
-      text-align:left;
-      display:grid;
-      gap:18px;
-      align-content:start;
-      height:100%;
-    }
-
-    .cta-title{
-      color:var(--navy);
-      font-size:clamp(38px, 5vw, 58px);
-      line-height:1.08;
-      letter-spacing:-0.03em;
-      font-weight:800;
-      margin:0;
-    }
-
-    .cta-text{
-      color:var(--muted);
-      font-size:20px;
-      line-height:1.8;
-      letter-spacing:-0.01em;
-      max-width:560px;
-      margin:0;
-    }
-
-    .cta-actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-
     .sticky-mobile-cta{
       position:fixed;
       left:12px;
@@ -1363,7 +1630,7 @@
       gap:10px;
       padding:10px;
       border-radius:18px;
-      background:rgba(255,255,255,.92);
+      background:rgba(255,255,255,.94);
       backdrop-filter:blur(12px);
       border:1px solid rgba(24,50,79,.08);
       box-shadow:0 16px 34px rgba(20,35,60,.12);
@@ -1394,12 +1661,28 @@
       border:1px solid rgba(24,50,79,.08);
     }
 
+    .reveal{
+      opacity:0;
+      transform:translateY(22px);
+      transition:
+        opacity .7s ease,
+        transform .85s cubic-bezier(.22,.8,.22,1);
+      will-change:transform, opacity;
+    }
+
+    .reveal.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
     @media (max-width: 1160px){
       .hero-grid,
+      .scan-grid,
       .overview-grid,
       .grid-2,
       .project-top,
-      .contact-grid{
+      .contact-grid,
+      .section-header{
         grid-template-columns:1fr;
       }
 
@@ -1408,16 +1691,17 @@
         top:auto;
       }
 
+      .hero-reading,
       .hero-proof,
-      .mini-grid-3,
-      .leadership-footprint,
-      .wins-grid{
+      .wins-grid,
+      .leadership-footprint{
         grid-template-columns:repeat(2, 1fr);
       }
 
-      .project-summary,
-      .project-columns,
       .metrics-grid,
+      .project-columns,
+      .project-summary,
+      .fit-grid,
       .expertise-row{
         grid-template-columns:1fr 1fr;
       }
@@ -1460,8 +1744,8 @@
         display:block;
       }
 
-      .hero-photo-wrap{
-        max-width:260px;
+      .hero-photo-shell{
+        max-width:270px;
         margin:0 auto;
       }
 
@@ -1475,44 +1759,20 @@
         margin-top:10px;
         width:100%;
         min-width:0;
+        max-width:none;
       }
 
+      .hero-reading,
       .hero-proof,
-      .mini-grid-3,
-      .mini-grid-2,
+      .fit-grid,
       .expertise-row,
+      .wins-grid,
       .leadership-footprint,
       .metrics-grid,
-      .wins-grid,
       .project-summary,
       .project-columns,
       .contact-grid{
         grid-template-columns:1fr !important;
-      }
-
-      .expertise-item{
-        display:block;
-        padding:18px 16px;
-        border-radius:18px;
-      }
-
-      .expertise-item .icon-chip{
-        margin-bottom:12px;
-      }
-
-      .expertise-item h3{
-        font-size:20px;
-      }
-
-      .expertise-item ul{
-        font-size:15px;
-        line-height:1.75;
-        padding-left:18px;
-      }
-
-      .about-photo{
-        max-height:420px;
-        object-fit:cover;
       }
 
       .timeline::before{
@@ -1544,11 +1804,7 @@
       }
 
       .project-details{
-        padding:0 14px 14px;
-      }
-
-      .project-columns{
-        padding:0 14px 14px;
+        padding:14px;
       }
 
       .dash-top{
@@ -1585,9 +1841,9 @@
         font-size:44px;
       }
 
-      .hero-sub{
-        font-size:21px;
-        line-height:1.52;
+      .hero-role{
+        font-size:24px;
+        line-height:1.4;
       }
 
       .subtitle,
@@ -1599,8 +1855,7 @@
       .lead,
       .bullet-list,
       .scope-box ul,
-      .metric-desc,
-      .project-col ul{
+      .metric-desc{
         font-size:15px;
       }
 
@@ -1631,9 +1886,10 @@
 
   <nav class="nav">
     <div class="nav-inner">
-      <div class="brand">WILDAN SAEFUDIN</div>
+      <div class="brand">Wildan Saefudin</div>
       <div class="nav-links">
         <a href="#home">Home</a>
+        <a href="#scan">Highlights</a>
         <a href="#overview">Overview</a>
         <a href="#fit">Fit</a>
         <a href="#expertise">Expertise</a>
@@ -1650,28 +1906,60 @@
 
   <section class="hero" id="home">
     <div class="container">
-      <div class="panel reveal">
+      <div class="panel">
         <div class="hero-grid">
           <div class="content-stack">
-            <div>
-              <div class="eyebrow">Strategy to Execution</div>
+            <div class="reveal" data-delay="0">
+              <div class="impact-strip">
+                <span class="dot"></span>
+                Built $2.8M/month revenue in under 3 months
+              </div>
+
               <h1 class="hero-name">Wildan Saefudin</h1>
-              <p class="hero-sub">
-                Strategy-to-Execution Leader Driving Business Growth, Transformation, and Profitability in Mining & Industrial Sectors
+
+              <p class="hero-role">
+                Strategy-to-Execution Leader Building Growth, Transformation, and Profitability Across Mining & Industrial Operations
               </p>
+
               <p class="hero-desc">
-                I build new business lines, improve profitability, redesign operating systems, and enable faster decision-making through governance, commercial execution, financial thinking, and performance management.
+                I build new business lines, improve profitability, redesign operating systems, and enable faster decision-making through governance, commercial execution, financial thinking, and performance systems.
               </p>
             </div>
 
-            <div class="hero-actions">
+            <div class="hero-reading">
+              <div class="reading-step reveal" data-delay="80">
+                <span class="n">Read 01</span>
+                <span class="t">Business builder</span>
+                <span class="d">I create new revenue streams from underused assets and commercial opportunities.</span>
+              </div>
+
+              <div class="reading-step reveal" data-delay="160">
+                <span class="n">Read 02</span>
+                <span class="t">Transformation leader</span>
+                <span class="d">I turn founder-dependent or slow-moving operations into structured systems.</span>
+              </div>
+
+              <div class="reading-step reveal" data-delay="240">
+                <span class="n">Read 03</span>
+                <span class="t">Financial thinker</span>
+                <span class="d">I connect CAPEX, payback, cost logic, and execution discipline.</span>
+              </div>
+
+              <div class="reading-step reveal" data-delay="320">
+                <span class="n">Read 04</span>
+                <span class="t">Performance enabler</span>
+                <span class="d">I build KPI, dashboards, and management visibility for faster decisions.</span>
+              </div>
+            </div>
+
+            <div class="hero-actions reveal" data-delay="380">
               <a class="btn btn-primary" href="cv.pdf" target="_blank">Download CV</a>
               <a class="btn btn-secondary" href="portfolio.pdf" target="_blank">Portfolio PDF</a>
               <a class="btn btn-secondary" href="https://linkedin.com/in/wildan-saefudin" target="_blank">LinkedIn</a>
               <a class="btn btn-secondary" href="http://wa.me/6289653013282" target="_blank">WhatsApp</a>
             </div>
 
-            <div class="chip-grid">
+            <div class="chip-grid reveal" data-delay="430">
               <div class="tag">Business Building</div>
               <div class="tag">Transformation</div>
               <div class="tag">CAPEX & Profitability</div>
@@ -1680,39 +1968,146 @@
             </div>
 
             <div class="hero-proof">
-              <div class="proof-card reveal">
-                <div class="value">IDR 50B+</div>
-                <div class="label">CAPEX-backed business line creation</div>
-              </div>
-              <div class="proof-card reveal">
+              <div class="proof-card featured reveal" data-delay="520">
                 <div class="value">$2.8M/mo</div>
-                <div class="label">Revenue built in under 3 months</div>
+                <div class="label">Trading revenue built from zero in under 3 months</div>
               </div>
-              <div class="proof-card reveal">
+
+              <div class="proof-card reveal" data-delay="600">
+                <div class="value">IDR 50B+</div>
+                <div class="label">CAPEX-backed business line creation from idle nickel assets</div>
+              </div>
+
+              <div class="proof-card reveal" data-delay="680">
                 <div class="value">4h → 5m</div>
-                <div class="label">Reporting cycle reduced through systems</div>
+                <div class="label">Reporting cycle reduced through dashboards and performance systems</div>
               </div>
             </div>
           </div>
 
-          <div class="hero-visual">
-            <div class="hero-photo-wrap">
-              <img src="profile.png" alt="Formal portrait of Wildan Saefudin" class="hero-photo" />
+          <div class="hero-visual reveal" data-delay="220">
+            <div class="hero-photo-shell">
+              <div class="hero-photo-wrap">
+                <img src="profile.png" alt="Formal portrait of Wildan Saefudin" class="hero-photo" />
+              </div>
             </div>
 
             <div class="floating-card fc-1">
+              <span class="mini">Scale</span>
               <span class="k">150+</span>
-              <span class="t">Cross-functional personnel led</span>
+              <span class="t">Cross-functional personnel led across multi-site operations</span>
             </div>
 
             <div class="floating-card fc-2">
+              <span class="mini">Governance</span>
               <span class="k">12 Units</span>
-              <span class="t">Governance and execution impact</span>
+              <span class="t">Governance and execution framework across business units</span>
             </div>
 
             <div class="floating-card fc-3">
+              <span class="mini">Experience</span>
               <span class="k">10+ Years</span>
-              <span class="t">Strategy, operations, data, and business analysis</span>
+              <span class="t">Strategy, operations, commercial, data, and business analysis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="scan">
+    <div class="container">
+      <div class="panel">
+        <div class="page-no">01A</div>
+
+        <div class="section-header">
+          <div class="section-guide reveal" data-delay="0">
+            <span class="mini">How to read this</span>
+            <strong>Start here first</strong>
+            <span>This section gives the recruiter shortcut before going deeper into the rest of the portfolio.</span>
+          </div>
+
+          <div class="title-wrap reveal" data-delay="80">
+            <div class="eyebrow">Fast Recruiter Scan</div>
+            <h2 class="title">What Should Stand Out in Under 15 Seconds</h2>
+            <p class="subtitle">
+              A guided first read so the main business impact is obvious before any detailed scrolling begins.
+            </p>
+          </div>
+        </div>
+
+        <div class="hairline"></div>
+
+        <div class="scan-grid">
+          <div class="scan-card reveal" data-delay="140">
+            <h3>Why recruiters usually stop and keep reading</h3>
+
+            <div class="scan-list">
+              <div class="scan-item">
+                <div class="scan-icon">01</div>
+                <div>
+                  <strong>Built a new revenue-generating business from idle nickel assets</strong>
+                  <span>Turned ~3.6M MT low-grade nickel into an operating business backed by IDR 50B+ CAPEX.</span>
+                </div>
+              </div>
+
+              <div class="scan-item">
+                <div class="scan-icon">02</div>
+                <div>
+                  <strong>Launched a trading business from zero to $2.8M/month</strong>
+                  <span>Built sourcing, pricing, SOP, coordination, and execution in under 3 months.</span>
+                </div>
+              </div>
+
+              <div class="scan-item">
+                <div class="scan-icon">03</div>
+                <div>
+                  <strong>Transformed execution speed across the organization</strong>
+                  <span>Reduced decision-making cycle from 5 days to 1 day through governance and structure.</span>
+                </div>
+              </div>
+
+              <div class="scan-item">
+                <div class="scan-icon">04</div>
+                <div>
+                  <strong>Enabled management visibility through data systems</strong>
+                  <span>Cut reporting time from 4 hours to 5 minutes through dashboards, KPI, and automation.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="priority-stack">
+            <div class="priority-card featured reveal" data-delay="220">
+              <div class="top">
+                <span class="ey">Top Highlight</span>
+              </div>
+              <div class="big">$2.8M/mo</div>
+              <div class="desc">Built a new trading business from zero to multi-million monthly revenue in under 3 months.</div>
+            </div>
+
+            <div class="priority-card reveal" data-delay="300">
+              <div class="top">
+                <span class="ey">Business Build</span>
+              </div>
+              <div class="big">IDR 50B+</div>
+              <div class="desc">CAPEX-backed business line built from previously idle low-grade nickel assets.</div>
+            </div>
+
+            <div class="priority-card reveal" data-delay="380">
+              <div class="top">
+                <span class="ey">Transformation</span>
+              </div>
+              <div class="big">5d → 1d</div>
+              <div class="desc">Decision-making accelerated by 80% through governance and operating redesign.</div>
+            </div>
+
+            <div class="priority-card reveal" data-delay="460">
+              <div class="top">
+                <span class="ey">Systems</span>
+              </div>
+              <div class="big">4h → 5m</div>
+              <div class="desc">Reporting cycle reduced by 98% through KPI, database, and dashboard systems.</div>
             </div>
           </div>
         </div>
@@ -1722,21 +2117,36 @@
 
   <section class="section" id="overview">
     <div class="container">
-      <div class="panel reveal">
+      <div class="panel">
         <div class="page-no">02</div>
+
+        <div class="section-header">
+          <div class="section-guide reveal" data-delay="0">
+            <span class="mini">Read next</span>
+            <strong>Who I am in one page</strong>
+            <span>After the highlights, this section explains the operating pattern behind the results.</span>
+          </div>
+
+          <div class="title-wrap reveal" data-delay="80">
+            <div class="eyebrow">Profile Overview</div>
+            <h2 class="title">From Analysis to Strategic Execution Leadership</h2>
+            <p class="subtitle">
+              Over 10+ years, my career evolved from market and data analysis into strategy, business planning, transformation, and execution leadership across mining and industrial environments.
+            </p>
+          </div>
+        </div>
+
+        <div class="hairline"></div>
+
         <div class="overview-grid">
           <div class="section-stack">
-            <div>
-              <h2 class="title">Profile Overview</h2>
+            <div class="reveal" data-delay="140">
               <p class="lead">
-                Over the last 10+ years, I have moved from market and data analysis into strategy, business planning, transformation, and execution leadership across mining and industrial environments.
-              </p>
-              <p class="lead">
-                My core strength is turning business priorities into operating reality — whether that means building a new revenue stream, improving governance, accelerating decision-making, or creating the systems required to scale.
+                My core strength is not just designing strategy, but turning business priorities into operating reality — whether that means launching a new business, improving profitability, building governance, or creating the systems required to scale.
               </p>
             </div>
 
-            <div>
+            <div class="reveal" data-delay="220">
               <div class="section-label">What I Consistently Deliver</div>
               <ul class="bullet-list">
                 <li>Build new business lines from <span class="bold">concept to revenue</span></li>
@@ -1746,12 +2156,34 @@
                 <li>Enable management teams to act faster through <span class="bold">KPI, dashboards, and reporting systems</span></li>
               </ul>
             </div>
+
+            <div class="fit-grid">
+              <div class="fit-card highlight reveal" data-delay="300">
+                <strong>Build</strong>
+                <span>New business lines, new revenue streams, and monetization models from underused assets or new commercial opportunities.</span>
+              </div>
+
+              <div class="fit-card reveal" data-delay="360">
+                <strong>Transform</strong>
+                <span>Governance, structure, SOP, and execution discipline so organizations can move faster and scale better.</span>
+              </div>
+
+              <div class="fit-card reveal" data-delay="420">
+                <strong>Scale</strong>
+                <span>Commercial launch, cross-functional coordination, and operating system design that support growth.</span>
+              </div>
+
+              <div class="fit-card reveal" data-delay="480">
+                <strong>Enable</strong>
+                <span>Dashboards, KPI frameworks, and data systems that improve decision-making speed and management visibility.</span>
+              </div>
+            </div>
           </div>
 
-          <div class="about-photo-card">
+          <div class="about-photo-card reveal" data-delay="220">
             <img src="about.png" alt="Secondary profile photo" class="about-photo" />
             <div class="about-note">
-              Positioned for strategic leadership, business planning, transformation, PMO, and execution-heavy roles where business growth and operating discipline need to happen together.
+              Positioned for strategic leadership, transformation, business planning, PMO, CEO Office, and execution-heavy roles where growth and operating discipline need to happen together.
             </div>
           </div>
         </div>
@@ -1761,61 +2193,56 @@
 
   <section class="section" id="fit">
     <div class="container">
-      <div class="panel reveal">
-        <div class="eyebrow">Recruiter Clarity</div>
-        <h2 class="title">Where I Fit Best</h2>
-        <p class="subtitle">
-          Clear role-fit positioning so recruiters and hiring managers can immediately understand where I create the most value.
-        </p>
+      <div class="panel">
+        <div class="page-no">03</div>
+
+        <div class="section-header">
+          <div class="section-guide reveal" data-delay="0">
+            <span class="mini">Recruiter clarity</span>
+            <strong>Where I fit best</strong>
+            <span>This is here to reduce confusion and make role matching immediate.</span>
+          </div>
+
+          <div class="title-wrap reveal" data-delay="80">
+            <div class="eyebrow">Role Fit</div>
+            <h2 class="title">Best-Fit Roles Based on How I Create Value</h2>
+            <p class="subtitle">
+              Clear positioning so hiring managers can quickly understand the level and type of role where I deliver the most impact.
+            </p>
+          </div>
+        </div>
 
         <div class="hairline"></div>
 
-        <div class="section-stack">
-          <div>
-            <div class="section-label">Role Fit</div>
-            <div class="mini-grid-3">
-              <div class="best-fit-card reveal">
-                <strong>Head of Strategy / Strategic Planning</strong>
-                <span>For organizations needing stronger direction, business planning, and execution alignment.</span>
-              </div>
-              <div class="best-fit-card reveal">
-                <strong>Business Transformation Lead</strong>
-                <span>For companies improving governance, speed, operating model, and cross-functional execution.</span>
-              </div>
-              <div class="best-fit-card reveal">
-                <strong>PMO / Strategic Management Office</strong>
-                <span>For leadership teams needing better implementation discipline and progress control.</span>
-              </div>
-              <div class="best-fit-card reveal">
-                <strong>Commercial & Growth Strategy</strong>
-                <span>For businesses launching new revenue streams, trading models, or market expansion plays.</span>
-              </div>
-              <div class="best-fit-card reveal">
-                <strong>Performance Management</strong>
-                <span>For organizations needing KPI systems, dashboards, and operating visibility at management level.</span>
-              </div>
-              <div class="best-fit-card reveal">
-                <strong>Chief of Staff / CEO Office</strong>
-                <span>For leaders who need a strategy-to-execution partner across planning, governance, and business priorities.</span>
-              </div>
-            </div>
+        <div class="fit-grid">
+          <div class="fit-card highlight reveal" data-delay="140">
+            <strong>Head of Strategy / Strategic Planning</strong>
+            <span>For organizations needing stronger direction, business planning, and execution alignment.</span>
           </div>
 
-          <div class="hairline"></div>
+          <div class="fit-card reveal" data-delay="220">
+            <strong>Business Transformation Lead</strong>
+            <span>For companies improving governance, speed, operating model, and cross-functional execution.</span>
+          </div>
 
-          <div class="mini-grid-2">
-            <div class="info-card reveal">
-              <h3>Why Hire Me</h3>
-              <p>
-                I combine strategic thinking, financial analysis, commercial execution, operating model design, and data systems into one end-to-end leadership capability.
-              </p>
-            </div>
-            <div class="info-card reveal">
-              <h3>Open To</h3>
-              <p>
-                Strategy leadership, transformation, business planning, PMO, CEO Office, commercial strategy, and performance management roles across mining, industrial, and adjacent sectors.
-              </p>
-            </div>
+          <div class="fit-card reveal" data-delay="300">
+            <strong>PMO / Strategic Management Office</strong>
+            <span>For leadership teams needing stronger implementation discipline, visibility, and progress control.</span>
+          </div>
+
+          <div class="fit-card reveal" data-delay="380">
+            <strong>Commercial & Growth Strategy</strong>
+            <span>For businesses launching new revenue streams, trading models, or market expansion plays.</span>
+          </div>
+
+          <div class="fit-card reveal" data-delay="460">
+            <strong>Performance Management</strong>
+            <span>For organizations needing KPI systems, dashboards, and management-level operating visibility.</span>
+          </div>
+
+          <div class="fit-card reveal" data-delay="540">
+            <strong>Chief of Staff / CEO Office</strong>
+            <span>For leaders who need a strategy-to-execution partner across planning, governance, and business priorities.</span>
           </div>
         </div>
       </div>
@@ -1824,25 +2251,38 @@
 
   <section class="section" id="expertise">
     <div class="container">
-      <div class="panel reveal">
-        <div class="page-no">03</div>
-        <h2 class="title">Core Expertise</h2>
-        <p class="subtitle">
-          Core capabilities across strategy, transformation, finance, commercial execution, and performance systems.
-        </p>
+      <div class="panel">
+        <div class="page-no">04</div>
+
+        <div class="section-header">
+          <div class="section-guide reveal" data-delay="0">
+            <span class="mini">Read next</span>
+            <strong>How I work</strong>
+            <span>These are the capability clusters that support the business outcomes shown above.</span>
+          </div>
+
+          <div class="title-wrap reveal" data-delay="80">
+            <div class="eyebrow">Core Expertise</div>
+            <h2 class="title">Capabilities Across Strategy, Transformation, Finance, and Data</h2>
+            <p class="subtitle">
+              Four capability pillars that connect strategic thinking with implementation, governance, and measurable business performance.
+            </p>
+          </div>
+        </div>
 
         <div class="hairline"></div>
 
         <div class="expertise-flow">
-          <div>
-            <div class="section-label">Strategic & Transformation Capabilities</div>
+          <div class="expertise-block">
+            <div class="section-label reveal" data-delay="140">Strategic & Transformation Capabilities</div>
             <div class="expertise-row">
-              <div class="expertise-item reveal">
+              <div class="expertise-item reveal" data-delay="200">
                 <div class="icon-chip">
                   <svg viewBox="0 0 24 24"><path d="M4 18h16"/><path d="M6 14l4-4 3 3 5-6"/></svg>
                 </div>
                 <div>
                   <h3>Strategic Planning & Direction</h3>
+                  <p>Used when leadership needs clearer priorities, stronger planning logic, and tighter business alignment.</p>
                   <ul>
                     <li>Shape business direction and execution priorities</li>
                     <li>Translate leadership goals into structured plans</li>
@@ -1851,12 +2291,13 @@
                 </div>
               </div>
 
-              <div class="expertise-item reveal">
+              <div class="expertise-item reveal" data-delay="280">
                 <div class="icon-chip">
                   <svg viewBox="0 0 24 24"><path d="M5 19V8"/><path d="M12 19V5"/><path d="M19 19v-9"/></svg>
                 </div>
                 <div>
                   <h3>Business Transformation & Governance</h3>
+                  <p>Used when execution slows down because structure, accountability, or process discipline is weak.</p>
                   <ul>
                     <li>Lead cross-functional transformation initiatives end-to-end</li>
                     <li>Build governance, SOP, role clarity, and operating discipline</li>
@@ -1867,33 +2308,35 @@
             </div>
           </div>
 
-          <div>
-            <div class="section-label">Finance & Performance Capabilities</div>
+          <div class="expertise-block">
+            <div class="section-label reveal" data-delay="360">Finance & Performance Capabilities</div>
             <div class="expertise-row">
-              <div class="expertise-item reveal">
+              <div class="expertise-item reveal" data-delay="420">
                 <div class="icon-chip">
                   <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 10h8"/><path d="M8 14h4"/></svg>
                 </div>
                 <div>
                   <h3>Financial & Business Analysis</h3>
+                  <p>Used when strategic decisions need stronger commercial logic, CAPEX clarity, and feasibility assessment.</p>
                   <ul>
                     <li>Build business cases, CAPEX models, and payback logic</li>
                     <li>Assess feasibility, profitability, and risk of initiatives</li>
-                    <li>Support better strategic decisions with financial clarity</li>
+                    <li>Support better decisions with financial clarity</li>
                   </ul>
                 </div>
               </div>
 
-              <div class="expertise-item reveal">
+              <div class="expertise-item reveal" data-delay="500">
                 <div class="icon-chip">
                   <svg viewBox="0 0 24 24"><path d="M4 18h16"/><path d="M7 15l3-3 3 2 4-5"/></svg>
                 </div>
                 <div>
                   <h3>Data & Performance Management</h3>
+                  <p>Used when leaders need faster visibility, stronger reporting discipline, and real-time performance control.</p>
                   <ul>
                     <li>Design KPI systems and executive dashboards</li>
                     <li>Improve reporting speed, visibility, and accountability</li>
-                    <li>Enable data-driven decision making across functions</li>
+                    <li>Enable data-driven decision-making across functions</li>
                   </ul>
                 </div>
               </div>
@@ -1907,52 +2350,71 @@
 
   <section class="section" id="wins">
     <div class="container">
-      <div class="panel reveal">
-        <div class="eyebrow">Selected Wins</div>
-        <h2 class="title">High-Impact Results at a Glance</h2>
-        <p class="subtitle">
-          The fastest way to understand the scale, speed, and business impact behind the work.
-        </p>
+      <div class="panel">
+        <div class="page-no">05</div>
+
+        <div class="section-header">
+          <div class="section-guide reveal" data-delay="0">
+            <span class="mini">Proof section</span>
+            <strong>Main business outcomes</strong>
+            <span>This section is intentionally scannable so the impact is obvious before deeper detail.</span>
+          </div>
+
+          <div class="title-wrap reveal" data-delay="80">
+            <div class="eyebrow">Selected Wins</div>
+            <h2 class="title">High-Impact Results at a Glance</h2>
+            <p class="subtitle">
+              The quickest way to understand scale, speed, and business value across growth, transformation, and performance systems.
+            </p>
+          </div>
+        </div>
 
         <div class="hairline"></div>
 
         <div class="wins-grid">
-          <div class="win-card reveal">
-            <div class="mini-label">Build</div>
-            <div class="mini-value">3.6M MT</div>
-            <div class="mini-desc">Converted idle low-grade nickel into a revenue-generating business line.</div>
-          </div>
-          <div class="win-card reveal">
-            <div class="mini-label">Invest</div>
-            <div class="mini-value">IDR 50B+</div>
-            <div class="mini-desc">CAPEX-backed initiative moved from business case into sustained operations.</div>
-          </div>
-          <div class="win-card reveal">
+          <div class="win-card featured reveal" data-delay="140">
             <div class="mini-label">Scale</div>
             <div class="mini-value">$2.8M/mo</div>
             <div class="mini-desc">Built a trading business from zero to multi-million monthly revenue in under 3 months.</div>
           </div>
-          <div class="win-card reveal">
+
+          <div class="win-card reveal" data-delay="200">
+            <div class="mini-label">Build</div>
+            <div class="mini-value">3.6M MT</div>
+            <div class="mini-desc">Converted idle low-grade nickel into a revenue-generating business line.</div>
+          </div>
+
+          <div class="win-card reveal" data-delay="260">
+            <div class="mini-label">Invest</div>
+            <div class="mini-value">IDR 50B+</div>
+            <div class="mini-desc">CAPEX-backed initiative moved from business case into sustained operations.</div>
+          </div>
+
+          <div class="win-card reveal" data-delay="320">
             <div class="mini-label">Transform</div>
             <div class="mini-value">5d → 1d</div>
-            <div class="mini-desc">Reduced decision-making cycle by 80% through governance and operating redesign.</div>
+            <div class="mini-desc">Reduced decision-making cycle by 80% through governance and redesign.</div>
           </div>
-          <div class="win-card reveal">
+
+          <div class="win-card reveal" data-delay="380">
             <div class="mini-label">Enable</div>
             <div class="mini-value">4h → 5m</div>
-            <div class="mini-desc">Reduced reporting cycle by 98% with dashboards, databases, and KPI systems.</div>
+            <div class="mini-desc">Reduced reporting cycle by 98% with dashboard, database, and KPI systems.</div>
           </div>
-          <div class="win-card reveal">
+
+          <div class="win-card reveal" data-delay="440">
             <div class="mini-label">Lead</div>
             <div class="mini-value">150+</div>
             <div class="mini-desc">Led cross-functional personnel across multi-site mining operations.</div>
           </div>
-          <div class="win-card reveal">
+
+          <div class="win-card reveal" data-delay="500">
             <div class="mini-label">Govern</div>
             <div class="mini-value">12 Units</div>
-            <div class="mini-desc">Built governance framework across multiple business units for scale and control.</div>
+            <div class="mini-desc">Built governance framework across multiple units for scale and control.</div>
           </div>
-          <div class="win-card reveal">
+
+          <div class="win-card reveal" data-delay="560">
             <div class="mini-label">Adopt</div>
             <div class="mini-value">95%</div>
             <div class="mini-desc">Data-driven performance system adopted broadly across the organization.</div>
@@ -1964,30 +2426,42 @@
 
   <section class="section" id="leadership">
     <div class="container">
-      <div class="panel reveal">
-        <div class="page-no">04</div>
-        <h2 class="title">Strategic Leadership Experience</h2>
-        <p class="subtitle">
-          Leadership scope across business building, transformation, governance, commercial launch, and management systems.
-        </p>
+      <div class="panel">
+        <div class="page-no">06</div>
+
+        <div class="section-header">
+          <div class="section-guide reveal" data-delay="0">
+            <span class="mini">Level signal</span>
+            <strong>Leadership exposure</strong>
+            <span>This section helps recruiters understand scope, not just task execution.</span>
+          </div>
+
+          <div class="title-wrap reveal" data-delay="80">
+            <div class="eyebrow">Strategic Leadership</div>
+            <h2 class="title">Leadership Scope Across Business Building and Transformation</h2>
+            <p class="subtitle">
+              Exposure spanning CAPEX-backed initiatives, multi-site execution, governance, commercial launch, and management systems.
+            </p>
+          </div>
+        </div>
 
         <div class="hairline"></div>
 
         <div class="grid-2">
-          <div class="scope-box reveal">
-            <div class="section-label">Leadership Scope</div>
-            <h3>How I Operate</h3>
+          <div class="scope-box reveal" data-delay="140">
+            <div class="section-label">How I Operate</div>
+            <h3>Strategy to Execution, Not Strategy Alone</h3>
             <ul>
               <li>Lead strategic initiatives with <span class="bold">multi-billion IDR</span> business impact</li>
-              <li>Deliver execution from concept, business case, and alignment through implementation</li>
-              <li>Build new operating structures, revenue streams, and governance systems</li>
+              <li>Deliver execution from concept and business case through implementation</li>
+              <li>Build revenue streams, operating structures, and governance systems</li>
               <li>Partner directly with Director level to support high-impact decisions</li>
             </ul>
           </div>
 
-          <div class="scope-box reveal">
-            <div class="section-label">Leadership Footprint</div>
-            <h3>Scale of Exposure</h3>
+          <div class="scope-box reveal" data-delay="220">
+            <div class="section-label">Scale of Exposure</div>
+            <h3>Business and Organizational Scope</h3>
             <ul>
               <li>Projects up to <span class="bold">IDR 50B+ CAPEX</span></li>
               <li>Cross-functional teams of <span class="bold">150+ personnel</span></li>
@@ -2000,25 +2474,29 @@
         <div class="hairline"></div>
 
         <div class="leadership-footprint">
-          <div class="footprint-card reveal">
+          <div class="footprint-card featured reveal" data-delay="300">
             <div class="big">IDR 50B+</div>
             <div class="small">CAPEX exposure</div>
           </div>
-          <div class="footprint-card reveal">
+
+          <div class="footprint-card reveal" data-delay="360">
             <div class="big">150+</div>
             <div class="small">Personnel led</div>
           </div>
-          <div class="footprint-card reveal">
-            <div class="big">12</div>
-            <div class="small">Business units impacted</div>
+
+          <div class="footprint-card reveal" data-delay="420">
+            <div class="big">12 Units</div>
+            <div class="small">Governance coverage</div>
           </div>
-          <div class="footprint-card reveal">
+
+          <div class="footprint-card reveal" data-delay="480">
             <div class="big">Multi-site</div>
-            <div class="small">Operating environment</div>
+            <div class="small">Operational exposure</div>
           </div>
-          <div class="footprint-card reveal">
+
+          <div class="footprint-card reveal" data-delay="540">
             <div class="big">Director</div>
-            <div class="small">Strategic exposure</div>
+            <div class="small">Leadership interaction</div>
           </div>
         </div>
       </div>
@@ -2027,16 +2505,29 @@
 
   <section class="section" id="timeline">
     <div class="container">
-      <div class="panel reveal">
-        <h2 class="title">Experience Timeline</h2>
-        <p class="subtitle">
-          Career progression from market and data analysis into strategy, business planning, transformation, and leadership.
-        </p>
+      <div class="panel">
+        <div class="page-no">07</div>
+
+        <div class="section-header">
+          <div class="section-guide reveal" data-delay="0">
+            <span class="mini">Career logic</span>
+            <strong>Progression, not job list</strong>
+            <span>This shows how the role complexity increased over time into leadership scope.</span>
+          </div>
+
+          <div class="title-wrap reveal" data-delay="80">
+            <div class="eyebrow">Career Progression</div>
+            <h2 class="title">Built Through Analysis, Expanded Through Execution</h2>
+            <p class="subtitle">
+              A progression from market insight and data analysis into business planning, transformation, and strategic leadership.
+            </p>
+          </div>
+        </div>
 
         <div class="hairline"></div>
 
         <div class="timeline">
-          <div class="timeline-item reveal">
+          <div class="timeline-item reveal" data-delay="140">
             <div class="timeline-year">2022 – 2025</div>
             <div class="timeline-card">
               <div class="timeline-role">Head of Strategy & Business Planning</div>
@@ -2047,35 +2538,35 @@
             </div>
           </div>
 
-          <div class="timeline-item reveal">
+          <div class="timeline-item reveal" data-delay="220">
             <div class="timeline-year">2021 – 2022</div>
             <div class="timeline-card">
               <div class="timeline-role">Business Data Analyst</div>
               <div class="timeline-company">PT Topindo Atlas Asia — Jakarta</div>
               <p>
-                Developed performance dashboards, improved sales and distributor visibility, and enabled data-driven decision making through KPI frameworks and reporting consistency.
+                Developed performance dashboards, improved visibility across sales and operations, and enabled data-driven decision-making through stronger KPI and reporting consistency.
               </p>
             </div>
           </div>
 
-          <div class="timeline-item reveal">
+          <div class="timeline-item reveal" data-delay="300">
             <div class="timeline-year">2018 – 2019</div>
             <div class="timeline-card">
               <div class="timeline-role">Data Analyst</div>
               <div class="timeline-company">PT Argapura — Tangerang</div>
               <p>
-                Analyzed operational data, identified process inefficiencies, and built reporting tools to monitor cost, quality, and delivery performance across operations.
+                Analyzed operational data, identified inefficiencies, and built reporting tools to support cost, quality, and delivery performance across operations.
               </p>
             </div>
           </div>
 
-          <div class="timeline-item reveal">
+          <div class="timeline-item reveal" data-delay="380">
             <div class="timeline-year">2011 – 2016</div>
             <div class="timeline-card">
               <div class="timeline-role">Market Analyst</div>
               <div class="timeline-company">PT Presindo Central (Onyx Design) — Jakarta</div>
               <p>
-                Analyzed market trends and customer behavior to support product strategy, pricing decisions, and growth opportunity identification across retail channels.
+                Analyzed market trends and customer behavior to support product strategy, pricing decisions, and growth opportunities across retail channels.
               </p>
             </div>
           </div>
@@ -2086,60 +2577,116 @@
 
   <section class="section" id="metrics">
     <div class="container">
-      <div class="panel reveal">
-        <div class="eyebrow">Key Metrics</div>
-        <h2 class="title">Impact Metrics</h2>
-        <p class="subtitle">
-          All core achievements remain visible, but grouped into clearer reading blocks so the business story is easier to scan.
-        </p>
+      <div class="panel">
+        <div class="page-no">08</div>
+
+        <div class="section-header">
+          <div class="section-guide reveal" data-delay="0">
+            <span class="mini">Quantified proof</span>
+            <strong>Main numbers first</strong>
+            <span>The strongest metric is highlighted first, then the supporting business evidence follows.</span>
+          </div>
+
+          <div class="title-wrap reveal" data-delay="80">
+            <div class="eyebrow">Key Metrics</div>
+            <h2 class="title">Numbers That Capture Scale, Speed, and Operational Impact</h2>
+            <p class="subtitle">
+              A metric-led section designed to make business value clear before moving into the detailed project case studies.
+            </p>
+          </div>
+        </div>
 
         <div class="hairline"></div>
 
         <div class="metrics-group">
-          <div class="metrics-cluster reveal">
-            <div class="cluster-title">Business Impact</div>
+          <div class="metrics-cluster reveal" data-delay="140">
+            <div class="cluster-title">Primary headline metrics</div>
+
             <div class="metrics-grid">
-              <div class="metric-box">
-                <div class="metric-label">CAPEX</div>
-                <div class="metric-value">IDR 50B+</div>
-                <div class="metric-desc">New business line creation backed by capital deployment and implementation discipline.</div>
+              <div class="metric-box featured">
+                <div>
+                  <div class="metric-label">Commercial Launch</div>
+                  <div class="metric-value">$2.8M/mo</div>
+                </div>
+                <div class="metric-desc">
+                  Revenue generated within 3 months after building trading operations from zero.
+                </div>
               </div>
+
               <div class="metric-box">
-                <div class="metric-label">Revenue</div>
-                <div class="metric-value">$2.8M/mo</div>
-                <div class="metric-desc">Trading business launched from zero to multi-million monthly revenue in under 3 months.</div>
+                <div>
+                  <div class="metric-label">Business Build</div>
+                  <div class="metric-value">IDR 50B+</div>
+                </div>
+                <div class="metric-desc">
+                  CAPEX-backed business line created from previously non-commercial nickel stockpiles.
+                </div>
+              </div>
+
+              <div class="metric-box">
+                <div>
+                  <div class="metric-label">Transformation</div>
+                  <div class="metric-value">5d → 1d</div>
+                </div>
+                <div class="metric-desc">
+                  Decision-making cycle reduced by 80% through governance and structural redesign.
+                </div>
+              </div>
+
+              <div class="metric-box">
+                <div>
+                  <div class="metric-label">Performance System</div>
+                  <div class="metric-value">4h → 5m</div>
+                </div>
+                <div class="metric-desc">
+                  Reporting cycle reduced by 98% through dashboards, database integration, and KPI visibility.
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="metrics-cluster reveal">
-            <div class="cluster-title">Operational Impact</div>
-            <div class="metrics-grid">
-              <div class="metric-box">
-                <div class="metric-label">Decision Speed</div>
-                <div class="metric-value">5d → 1d</div>
-                <div class="metric-desc">Decision-making cycle reduced through governance redesign, role clarity, and systemization.</div>
-              </div>
-              <div class="metric-box">
-                <div class="metric-label">Reporting</div>
-                <div class="metric-value">4h → 5m</div>
-                <div class="metric-desc">Reporting cycle compressed through dashboards, database structure, and automation.</div>
-              </div>
-            </div>
-          </div>
+          <div class="metrics-cluster reveal" data-delay="240">
+            <div class="cluster-title">Supporting scale metrics</div>
 
-          <div class="metrics-cluster reveal">
-            <div class="cluster-title">Leadership Scope</div>
             <div class="metrics-grid">
               <div class="metric-box">
-                <div class="metric-label">Team</div>
-                <div class="metric-value">150+</div>
-                <div class="metric-desc">Cross-functional personnel led across mining operations, implementation, and coordination.</div>
+                <div>
+                  <div class="metric-label">Operating Scale</div>
+                  <div class="metric-value">3.6M MT</div>
+                </div>
+                <div class="metric-desc">
+                  Idle low-grade nickel converted into a monetizable asset and a sustained operating business line.
+                </div>
               </div>
+
               <div class="metric-box">
-                <div class="metric-label">Business Units</div>
-                <div class="metric-value">12</div>
-                <div class="metric-desc">Governance framework designed and implemented across multiple business units.</div>
+                <div>
+                  <div class="metric-label">Leadership Scope</div>
+                  <div class="metric-value">150+</div>
+                </div>
+                <div class="metric-desc">
+                  Cross-functional personnel led across execution-heavy multi-site mining operations.
+                </div>
+              </div>
+
+              <div class="metric-box">
+                <div>
+                  <div class="metric-label">Governance Coverage</div>
+                  <div class="metric-value">12 Units</div>
+                </div>
+                <div class="metric-desc">
+                  Governance and compliance framework established across multiple business units.
+                </div>
+              </div>
+
+              <div class="metric-box">
+                <div>
+                  <div class="metric-label">System Adoption</div>
+                  <div class="metric-value">95%</div>
+                </div>
+                <div class="metric-desc">
+                  Data-driven performance system broadly adopted across the organization.
+                </div>
               </div>
             </div>
           </div>
@@ -2151,107 +2698,200 @@
 
   <section class="section" id="projects">
     <div class="container">
-      <div class="panel reveal">
-        <h2 class="title">Selected Projects</h2>
-        <p class="subtitle">
-          Signature projects structured in the same executive logic throughout: Business Challenge, Strategic Execution, and Business Impact.
-        </p>
+      <div class="panel">
+        <div class="page-no">09</div>
+
+        <div class="section-header">
+          <div class="section-guide reveal" data-delay="0">
+            <span class="mini">Case studies</span>
+            <strong>Story, then detail</strong>
+            <span>Each project starts with the business headline first, then challenge, action, and impact.</span>
+          </div>
+
+          <div class="title-wrap reveal" data-delay="80">
+            <div class="eyebrow">Selected Projects</div>
+            <h2 class="title">From Business Challenge to Measurable Impact</h2>
+            <p class="subtitle">
+              Four case studies showing how strategy, execution, governance, and systems translated into real business outcomes.
+            </p>
+          </div>
+        </div>
 
         <div class="hairline"></div>
 
         <div class="projects-wrap">
-          <article class="project-card reveal">
+
+          <article class="project-card reveal" data-delay="140">
             <div class="project-top">
               <div>
-                <img src="project-1.jpg" alt="Nickel mining business line project visual" class="project-photo" />
-                <div class="project-caption">Field execution · business line creation</div>
+                <img src="project-2.jpg" alt="Commercial launch visual" class="project-photo" />
+                <div class="project-caption">Project Priority #1 — Revenue creation</div>
               </div>
 
               <div>
-                <div class="project-kicker">Project 01</div>
-                <h3 class="project-title">New Business Line Creation & Cost Transformation</h3>
-                <p class="project-subtitle">Built a new revenue-generating business from 3.6M MT low-grade nickel</p>
+                <div class="project-kicker">Commercial Launch</div>
+                <h3 class="project-title">Built a New Trading Business from Zero to $2.8M Monthly Revenue</h3>
+                <p class="project-subtitle">Created end-to-end trading capability in under 3 months</p>
                 <p class="project-tagline">
-                  Turned previously non-commercial material into a monetized operating asset through business case development, vendor execution, operating model design, and cost transformation.
+                  No existing trading business, team, supplier network, or operating structure — but the commercial opportunity was there if execution could move fast enough.
                 </p>
 
                 <div class="project-highlight">
-                  <div class="tag">3.6M MT monetized</div>
-                  <div class="tag">IDR 50B+ CAPEX</div>
-                  <div class="tag">~$1/ton cost reduction</div>
-                  <div class="tag">150+ personnel</div>
+                  <div class="tag">$2.8M/mo revenue</div>
+                  <div class="tag">~$200K monthly margin</div>
+                  <div class="tag">100K MT/month</div>
+                  <div class="tag">Under 3 months</div>
                 </div>
 
                 <div class="project-summary">
                   <div class="project-summary-box">
-                    <strong>Context</strong>
-                    <span>Idle low-grade nickel stockpile with zero economic value and high contractor dependency.</span>
+                    <strong>What changed</strong>
+                    <span>From no trading setup to fully operating commercial engine.</span>
                   </div>
+
                   <div class="project-summary-box">
-                    <strong>Execution</strong>
-                    <span>Built business case, commissioned project, and established in-house operations.</span>
+                    <strong>Why it mattered</strong>
+                    <span>Created a new growth channel fast, not after a long planning cycle.</span>
                   </div>
+
                   <div class="project-summary-box">
-                    <strong>Impact</strong>
-                    <span>Created a sustained business line and improved cost structure for 1.5+ years.</span>
+                    <strong>Leadership signal</strong>
+                    <span>Commercial setup, supplier network, pricing, process, and execution ownership.</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="project-details">
-              <details>
-                <summary>View Full Breakdown</summary>
-                <div class="project-columns">
-                  <div class="project-col">
-                    <h3>Business Challenge</h3>
-                    <ul>
-                      <li>Low-grade nickel (&lt;0.9) treated as non-commercial waste</li>
-                      <li>~3.6M MT stockpiled with zero economic value</li>
-                      <li>High contractor dependency driving elevated handling cost</li>
-                      <li>No internal capability to process or monetize the material</li>
-                    </ul>
-                  </div>
-
-                  <div class="project-col">
-                    <h3>Strategic Execution</h3>
-                    <ul>
-                      <li>Developed full business case and financial model covering CAPEX, OPEX, and payback</li>
-                      <li>Led vendor sourcing, negotiation, and end-to-end project commissioning</li>
-                      <li>Built in-house operations to eliminate contractor dependency</li>
-                      <li>Designed SOP, operating model, and cost control system</li>
-                      <li>Built and led a 150+ personnel operating team</li>
-                    </ul>
-                  </div>
-
-                  <div class="project-col">
-                    <h3>Business Impact</h3>
-                    <ul>
-                      <li>Transformed non-commercial waste into a revenue-generating asset</li>
-                      <li>Monetized ~3.6M MT previously idle material</li>
-                      <li>Reduced handling cost by approximately $1/ton</li>
-                      <li>Established new business line with IDR 50B+ CAPEX investment</li>
-                      <li>Sustained stable operations for 1.5+ years</li>
-                    </ul>
-                  </div>
+              <div class="project-columns">
+                <div class="project-col">
+                  <h3>Business Challenge</h3>
+                  <p>The business wanted new revenue, but there was no trading structure to capture it.</p>
+                  <ul>
+                    <li>No existing trading business, team, or SOP</li>
+                    <li>No supplier network or sourcing pipeline</li>
+                    <li>No pricing mechanism or transaction process</li>
+                    <li>Limited internal capability to execute trading operations</li>
+                  </ul>
                 </div>
-              </details>
+
+                <div class="project-col featured">
+                  <h3>Strategic Execution</h3>
+                  <p>I built the commercial model and operating structure from the ground up.</p>
+                  <ul>
+                    <li>Designed end-to-end trading model and coordination flow</li>
+                    <li>Built supplier network and secured sourcing pipeline</li>
+                    <li>Developed SOP, pricing mechanism, and transaction process</li>
+                    <li>Established execution across operations, logistics, and commercial teams</li>
+                  </ul>
+                </div>
+
+                <div class="project-col">
+                  <h3>Business Impact</h3>
+                  <p>The result was immediate commercial traction and scalable operations.</p>
+                  <ul>
+                    <li>Generated <strong>$2.8M monthly revenue</strong> within 3 months</li>
+                    <li>Achieved <strong>~$200K monthly gross margin</strong></li>
+                    <li>Scaled trading volume to <strong>100K MT/month</strong></li>
+                    <li>Established multi-region integrated trading operations</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </article>
 
-          <article class="project-card reveal">
+          <article class="project-card reveal" data-delay="220">
             <div class="project-top">
               <div>
-                <img src="project-2.jpg" alt="Organization transformation project visual" class="project-photo" />
-                <div class="project-caption">Leadership transformation · governance</div>
+                <img src="project-1.jpg" alt="Nickel mining project visual" class="project-photo" />
+                <div class="project-caption">Project Priority #2 — New business creation</div>
               </div>
 
               <div>
-                <div class="project-kicker">Project 02</div>
-                <h3 class="project-title">Organization Transformation & Governance Redesign</h3>
-                <p class="project-subtitle">Transformed a founder-dependent organization into a system-driven operation</p>
+                <div class="project-kicker">Business Building</div>
+                <h3 class="project-title">Turned 3.6M MT Idle Nickel Into a Revenue-Generating Business</h3>
+                <p class="project-subtitle">Built a new operating line backed by IDR 50B+ CAPEX</p>
                 <p class="project-tagline">
-                  Redesigned structure, governance, execution ownership, and compliance systems to reduce bottlenecks and create a more scalable operating model.
+                  ~3.6M MT low-grade nickel sat as non-commercial material with zero economic value, while contractor dependency kept handling cost elevated.
+                </p>
+
+                <div class="project-highlight">
+                  <div class="tag">3.6M MT asset monetized</div>
+                  <div class="tag">IDR 50B+ CAPEX</div>
+                  <div class="tag">~$1/ton cost reduction</div>
+                  <div class="tag">1.5+ years stable ops</div>
+                </div>
+
+                <div class="project-summary">
+                  <div class="project-summary-box">
+                    <strong>What changed</strong>
+                    <span>Idle stockpile became an active business line with operating structure.</span>
+                  </div>
+
+                  <div class="project-summary-box">
+                    <strong>Why it mattered</strong>
+                    <span>Created value from previously wasted assets while improving cost logic.</span>
+                  </div>
+
+                  <div class="project-summary-box">
+                    <strong>Leadership signal</strong>
+                    <span>Business case, CAPEX logic, sourcing, commissioning, and operating build-out.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-details">
+              <div class="project-columns">
+                <div class="project-col">
+                  <h3>Business Challenge</h3>
+                  <p>The company held material with no monetization path and an inefficient handling model.</p>
+                  <ul>
+                    <li>Low-grade nickel treated as non-commercial waste</li>
+                    <li>~3.6M MT stockpiled with zero economic value</li>
+                    <li>High contractor dependency driving elevated cost</li>
+                    <li>No internal capability to process or monetize material</li>
+                  </ul>
+                </div>
+
+                <div class="project-col featured">
+                  <h3>Strategic Execution</h3>
+                  <p>I translated the opportunity into a real business line with operational ownership.</p>
+                  <ul>
+                    <li>Developed full business case and financial model</li>
+                    <li>Led vendor sourcing, negotiation, and project commissioning</li>
+                    <li>Built in-house operations and eliminated contractor dependency</li>
+                    <li>Designed SOP, operating model, and cost control system</li>
+                  </ul>
+                </div>
+
+                <div class="project-col">
+                  <h3>Business Impact</h3>
+                  <p>The initiative shifted an idle burden into sustained operating value.</p>
+                  <ul>
+                    <li>Created a new revenue-generating business line</li>
+                    <li>Monetized <strong>~3.6M MT</strong> previously idle material</li>
+                    <li>Reduced handling cost by <strong>~$1/ton</strong></li>
+                    <li>Sustained stable operations for <strong>1.5+ years</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-delay="300">
+            <div class="project-top">
+              <div>
+                <img src="project-3.jpg" alt="Organization transformation visual" class="project-photo" />
+                <div class="project-caption">Project Priority #3 — Governance transformation</div>
+              </div>
+
+              <div>
+                <div class="project-kicker">Organization Transformation</div>
+                <h3 class="project-title">Turned a Founder-Dependent Operation into a System-Driven Organization</h3>
+                <p class="project-subtitle">Built structure, governance, and accountability for scale</p>
+                <p class="project-tagline">
+                  Decision-making was centralized, role clarity was weak, SOP was missing, and organizational scalability was limited by dependence on individuals.
                 </p>
 
                 <div class="project-highlight">
@@ -2263,141 +2903,62 @@
 
                 <div class="project-summary">
                   <div class="project-summary-box">
-                    <strong>Context</strong>
-                    <span>Decision making centralized, unclear structure, limited SOP, and heavy individual dependency.</span>
+                    <strong>What changed</strong>
+                    <span>From bottlenecked leadership dependency to structured governance.</span>
                   </div>
+
                   <div class="project-summary-box">
-                    <strong>Execution</strong>
-                    <span>Built structure, strategic management division, governance framework, and accountability system.</span>
+                    <strong>Why it mattered</strong>
+                    <span>Execution became faster, cleaner, and more scalable across units.</span>
                   </div>
+
                   <div class="project-summary-box">
-                    <strong>Impact</strong>
-                    <span>Faster decisions, faster execution, stronger compliance, and scalable growth readiness.</span>
+                    <strong>Leadership signal</strong>
+                    <span>Organization design, governance setup, standards, and accountability systems.</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="project-details">
-              <details>
-                <summary>View Full Breakdown</summary>
-                <div class="project-columns">
-                  <div class="project-col">
-                    <h3>Business Challenge</h3>
-                    <ul>
-                      <li>Decision-making centralized at Director level, creating bottlenecks</li>
-                      <li>No formal organizational structure or role clarity</li>
-                      <li>Absence of SOP and governance framework across operations</li>
-                      <li>High dependency on individuals, limiting scalability</li>
-                    </ul>
-                  </div>
-
-                  <div class="project-col">
-                    <h3>Strategic Execution</h3>
-                    <ul>
-                      <li>Designed and implemented organizational structure across functions</li>
-                      <li>Established Strategic Management Division to drive execution governance</li>
-                      <li>Developed SOP, governance frameworks, and operating procedures</li>
-                      <li>Implemented ISO 9001 &amp; 14001 standards across operations</li>
-                      <li>Defined roles, responsibilities, and performance accountability systems</li>
-                    </ul>
-                  </div>
-
-                  <div class="project-col">
-                    <h3>Business Impact</h3>
-                    <ul>
-                      <li>Reduced decision-making cycle from 5 days to 1 day</li>
-                      <li>Accelerated execution from 2 weeks to 1 week</li>
-                      <li>Established governance framework across 12 business units</li>
-                      <li>Increased process compliance to 90% organization-wide</li>
-                      <li>Enabled scalable operating model to support 2x business growth</li>
-                    </ul>
-                  </div>
-                </div>
-              </details>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-top">
-              <div>
-                <img src="project-3.jpg" alt="Trading business launch project visual" class="project-photo" />
-                <div class="project-caption">Commercial launch · scale-up execution</div>
-              </div>
-
-              <div>
-                <div class="project-kicker">Project 03</div>
-                <h3 class="project-title">Commercial Launch & Trading Business Build-Out</h3>
-                <p class="project-subtitle">Built a new trading business from zero to $2.8M monthly revenue in under 3 months</p>
-                <p class="project-tagline">
-                  Designed the full commercial setup including sourcing, supplier pipeline, pricing mechanism, transaction flow, and cross-functional execution across logistics and operations.
-                </p>
-
-                <div class="project-highlight">
-                  <div class="tag">$2.8M monthly revenue</div>
-                  <div class="tag">~$200K margin</div>
-                  <div class="tag">100K MT/month</div>
-                  <div class="tag">Multi-region operations</div>
+              <div class="project-columns">
+                <div class="project-col">
+                  <h3>Business Challenge</h3>
+                  <p>The organization had growth ambition, but execution was constrained by weak structure.</p>
+                  <ul>
+                    <li>Decision-making centralized at Director level</li>
+                    <li>No formal organizational structure or role clarity</li>
+                    <li>Limited SOP and governance framework</li>
+                    <li>High dependency on individuals, limiting scalability</li>
+                  </ul>
                 </div>
 
-                <div class="project-summary">
-                  <div class="project-summary-box">
-                    <strong>Context</strong>
-                    <span>No existing trading business, team, sourcing pipeline, or operating structure.</span>
-                  </div>
-                  <div class="project-summary-box">
-                    <strong>Execution</strong>
-                    <span>Built end-to-end model, supplier network, SOP, pricing logic, and coordination flow.</span>
-                  </div>
-                  <div class="project-summary-box">
-                    <strong>Impact</strong>
-                    <span>Created a fully integrated multi-region trading operation with rapid revenue ramp-up.</span>
-                  </div>
+                <div class="project-col featured">
+                  <h3>Strategic Execution</h3>
+                  <p>I built the system layer needed to reduce dependency and improve control.</p>
+                  <ul>
+                    <li>Designed and implemented organization structure across functions</li>
+                    <li>Established Strategic Management Division</li>
+                    <li>Developed SOP, governance framework, and operating procedures</li>
+                    <li>Defined roles, responsibilities, and accountability systems</li>
+                  </ul>
+                </div>
+
+                <div class="project-col">
+                  <h3>Business Impact</h3>
+                  <p>The result was faster decisions, stronger compliance, and better scalability.</p>
+                  <ul>
+                    <li>Reduced decision cycle from <strong>5 days to 1 day</strong></li>
+                    <li>Accelerated execution from <strong>2 weeks to 1 week</strong></li>
+                    <li>Established governance across <strong>12 business units</strong></li>
+                    <li>Increased process compliance to <strong>90%</strong></li>
+                  </ul>
                 </div>
               </div>
             </div>
-
-            <div class="project-details">
-              <details>
-                <summary>View Full Breakdown</summary>
-                <div class="project-columns">
-                  <div class="project-col">
-                    <h3>Business Challenge</h3>
-                    <ul>
-                      <li>No existing trading business, team, or operating structure</li>
-                      <li>No supplier network or sourcing pipeline established</li>
-                      <li>Absence of SOP, pricing strategy, and transaction flow</li>
-                      <li>Limited internal capability to execute trading operations</li>
-                    </ul>
-                  </div>
-
-                  <div class="project-col">
-                    <h3>Strategic Execution</h3>
-                    <ul>
-                      <li>Designed and implemented end-to-end trading model and operating structure</li>
-                      <li>Built supplier network and secured sourcing pipeline across regions</li>
-                      <li>Developed SOP, pricing mechanism, and transaction processes</li>
-                      <li>Established coordination across operations, logistics, and commercial teams</li>
-                      <li>Launched trading operations within less than 3 months</li>
-                    </ul>
-                  </div>
-
-                  <div class="project-col">
-                    <h3>Business Impact</h3>
-                    <ul>
-                      <li>Generated $2.8M monthly revenue within 3 months</li>
-                      <li>Achieved approximately $200K monthly gross margin</li>
-                      <li>Scaled trading volume to 100K MT monthly</li>
-                      <li>Established multi-region trading operations</li>
-                      <li>Integrated sourcing, logistics, and commercial execution into one operating model</li>
-                    </ul>
-                  </div>
-                </div>
-              </details>
-            </div>
           </article>
 
-          <article class="project-card reveal">
+          <article class="project-card reveal" data-delay="380">
             <div class="project-top">
               <div>
                 <div class="dashboard-art">
@@ -2419,7 +2980,7 @@
 
                     <div class="dash-grid">
                       <div class="dash-card">
-                        <div class="mini"></div>
+                        <div class="mini" style="width:64px;height:8px;border-radius:999px;background:#c5d4e8;"></div>
                         <div class="bars">
                           <div class="bar b1"></div>
                           <div class="bar b2"></div>
@@ -2428,8 +2989,9 @@
                           <div class="bar b5"></div>
                         </div>
                       </div>
+
                       <div class="dash-card">
-                        <div class="mini"></div>
+                        <div class="mini" style="width:64px;height:8px;border-radius:999px;background:#c5d4e8;"></div>
                         <div class="donut-wrap">
                           <div class="donut"></div>
                         </div>
@@ -2443,19 +3005,19 @@
                     </div>
                   </div>
                 </div>
-                <div class="project-caption">Dashboard illustration · systems thinking</div>
+                <div class="project-caption">Project Priority #4 — Data & performance systems</div>
               </div>
 
               <div>
-                <div class="project-kicker">Project 04</div>
-                <h3 class="project-title">Data Transformation & Performance System Build</h3>
-                <p class="project-subtitle">Enabled real-time decision making by building end-to-end data and performance systems</p>
+                <div class="project-kicker">Data Transformation</div>
+                <h3 class="project-title">Built End-to-End Data and Performance Systems for Real-Time Decisions</h3>
+                <p class="project-subtitle">From manual reporting to management-level operating visibility</p>
                 <p class="project-tagline">
-                  Integrated data, dashboards, KPI structure, and governance into a unified management system that improved speed, visibility, and organization-wide adoption.
+                  Reporting was manual, time-consuming, and fragmented. Management lacked real-time visibility, and decisions were delayed because the data system did not support speed or control.
                 </p>
 
                 <div class="project-highlight">
-                  <div class="tag">4h → 5m</div>
+                  <div class="tag">4 hours → 5 minutes</div>
                   <div class="tag">30+ dashboards</div>
                   <div class="tag">10 business units</div>
                   <div class="tag">95% adoption</div>
@@ -2463,60 +3025,61 @@
 
                 <div class="project-summary">
                   <div class="project-summary-box">
-                    <strong>Context</strong>
-                    <span>Manual reporting, no centralized data structure, and delayed management visibility.</span>
+                    <strong>What changed</strong>
+                    <span>From manual reporting to integrated dashboards and KPI visibility.</span>
                   </div>
+
                   <div class="project-summary-box">
-                    <strong>Execution</strong>
-                    <span>Built database, dashboards, KPI framework, governance, and reporting standards.</span>
+                    <strong>Why it mattered</strong>
+                    <span>Leadership could act faster because reporting no longer slowed decisions.</span>
                   </div>
+
                   <div class="project-summary-box">
-                    <strong>Impact</strong>
-                    <span>Faster reporting, better visibility, stronger efficiency, and organization-wide adoption.</span>
+                    <strong>Leadership signal</strong>
+                    <span>System design, KPI framework, governance, automation, and adoption.</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="project-details">
-              <details>
-                <summary>View Full Breakdown</summary>
-                <div class="project-columns">
-                  <div class="project-col">
-                    <h3>Business Challenge</h3>
-                    <ul>
-                      <li>Reporting process fully manual, time-consuming, and error-prone</li>
-                      <li>No centralized database or standardized data structure</li>
-                      <li>Lack of visibility into real-time operational performance</li>
-                      <li>Decision-making delayed due to slow reporting cycle</li>
-                    </ul>
-                  </div>
-
-                  <div class="project-col">
-                    <h3>Strategic Execution</h3>
-                    <ul>
-                      <li>Designed and built centralized database to integrate operational data</li>
-                      <li>Developed 30+ dashboards across operations, commercial, and management</li>
-                      <li>Established KPI framework and performance monitoring system</li>
-                      <li>Implemented data governance and reporting standardization</li>
-                      <li>Drove organization-wide adoption of data-driven decision making</li>
-                    </ul>
-                  </div>
-
-                  <div class="project-col">
-                    <h3>Business Impact</h3>
-                    <ul>
-                      <li>Reduced reporting cycle from 4 hours to 5 minutes</li>
-                      <li>Enabled real-time visibility across 10 business units</li>
-                      <li>Increased reporting efficiency by 80% through automation</li>
-                      <li>Improved decision turnaround speed by 80% across management levels</li>
-                      <li>Established data-driven system adopted across 95% of the organization</li>
-                    </ul>
-                  </div>
+              <div class="project-columns">
+                <div class="project-col">
+                  <h3>Business Challenge</h3>
+                  <p>The reporting layer could not support fast operational decision-making.</p>
+                  <ul>
+                    <li>Reporting process fully manual and error-prone</li>
+                    <li>No centralized database or standardized data structure</li>
+                    <li>Lack of visibility into real-time operational performance</li>
+                    <li>Decision-making delayed due to slow reporting cycle</li>
+                  </ul>
                 </div>
-              </details>
+
+                <div class="project-col featured">
+                  <h3>Strategic Execution</h3>
+                  <p>I built the data infrastructure and management layer needed for speed.</p>
+                  <ul>
+                    <li>Designed centralized database integrating operational data</li>
+                    <li>Developed 30+ dashboards across operations and management</li>
+                    <li>Established KPI framework and performance monitoring</li>
+                    <li>Implemented data governance and reporting standardization</li>
+                  </ul>
+                </div>
+
+                <div class="project-col">
+                  <h3>Business Impact</h3>
+                  <p>The new system improved both speed and organizational visibility.</p>
+                  <ul>
+                    <li>Reduced reporting cycle from <strong>4 hours to 5 minutes</strong></li>
+                    <li>Enabled real-time visibility across <strong>10 business units</strong></li>
+                    <li>Improved decision turnaround speed by <strong>80%</strong></li>
+                    <li>Established a data-driven system adopted across <strong>95%</strong> of the organization</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </article>
+
         </div>
       </div>
     </div>
@@ -2524,37 +3087,49 @@
 
   <section class="section" id="summary">
     <div class="container">
-      <div class="panel reveal">
-        <div class="page-no">09</div>
-        <h2 class="title">Executive Summary</h2>
-        <p class="subtitle">
-          Final framing before exit: core value, proven impact, and the differentiator that ties the whole story together.
-        </p>
+      <div class="panel">
+        <div class="page-no">10</div>
+
+        <div class="section-header">
+          <div class="section-guide reveal" data-delay="0">
+            <span class="mini">Closing frame</span>
+            <strong>What to remember</strong>
+            <span>This section re-states the whole portfolio in one executive summary before exit.</span>
+          </div>
+
+          <div class="title-wrap reveal" data-delay="80">
+            <div class="eyebrow">Executive Summary</div>
+            <h2 class="title">Strategy to Execution, With Visible Business Impact</h2>
+            <p class="subtitle">
+              Final framing before exit: core value, strongest proof points, and the differentiator that ties the story together.
+            </p>
+          </div>
+        </div>
 
         <div class="hairline"></div>
 
         <div class="summary-box">
-          <div class="summary-row reveal">
+          <div class="summary-row reveal" data-delay="140">
             <div class="summary-label">Core Value</div>
             <div class="summary-content">
               Strategy-to-execution leader with 10+ years of experience building businesses, improving profitability, and driving transformation across mining and industrial sectors.
             </div>
           </div>
 
-          <div class="summary-row reveal">
+          <div class="summary-row reveal" data-delay="220">
             <div class="summary-label">Key Impact</div>
             <div class="summary-content">
-              Build → New business line (IDR 50B+ CAPEX, 3.6M MT)<br />
-              Scale → $2.8M/month revenue trading business<br />
-              Transform → 80% faster decision-making organization<br />
-              Enable → 98% faster reporting with real-time data systems
+              Build → New business line from idle nickel assets (<strong>IDR 50B+ CAPEX, 3.6M MT</strong>)<br />
+              Scale → Trading business built from zero to <strong>$2.8M/month revenue</strong><br />
+              Transform → Organizational decision-making accelerated by <strong>80%</strong><br />
+              Enable → Reporting speed improved by <strong>98%</strong> through real-time systems
             </div>
           </div>
 
-          <div class="summary-row reveal">
+          <div class="summary-row reveal" data-delay="300">
             <div class="summary-label">Differentiator</div>
             <div class="summary-content">
-              Combines strategy, execution, commercial delivery, and data systems to drive end-to-end business transformation.
+              Combines strategy, execution, commercial delivery, financial thinking, and data systems to drive end-to-end business transformation.
             </div>
           </div>
         </div>
@@ -2564,24 +3139,26 @@
 
   <section class="section" id="contact">
     <div class="container">
-      <div class="panel reveal">
+      <div class="panel">
         <div class="contact-grid">
           <div class="cta-panel">
-            <div class="eyebrow">Let’s Connect</div>
-            <h2 class="cta-title">Open to discussing how I can contribute to business growth and transformation.</h2>
-            <p class="cta-text">
-              Available for strategy, transformation, business planning, PMO, commercial strategy, and execution leadership roles.
-            </p>
+            <div class="reveal" data-delay="0">
+              <div class="eyebrow">Let’s Connect</div>
+              <h2 class="cta-title">Open to discussing how I can help drive growth and transformation.</h2>
+              <p class="cta-text">
+                Available for strategy leadership, transformation, PMO, CEO Office, commercial strategy, and execution-heavy roles.
+              </p>
+            </div>
 
-            <div class="cta-actions">
-              <a class="btn btn-primary" href="cv.pdf" target="_blank">Download CV</a>
-              <a class="btn btn-secondary" href="portfolio.pdf" target="_blank">Download Portfolio</a>
+            <div class="cta-actions reveal" data-delay="120">
+              <a class="btn btn-primary" href="mailto:wieldsaef@gmail.com">Discuss Opportunity</a>
+              <a class="btn btn-secondary" href="cv.pdf" target="_blank">Download CV</a>
+              <a class="btn btn-secondary" href="portfolio.pdf" target="_blank">Portfolio PDF</a>
               <a class="btn btn-secondary" href="http://wa.me/6289653013282" target="_blank">WhatsApp</a>
-              <a class="btn btn-secondary" href="mailto:wieldsaef@gmail.com">Email</a>
             </div>
           </div>
 
-          <div class="contact-card">
+          <div class="contact-card reveal" data-delay="220">
             <div class="contact-name">Wildan Saefudin</div>
             <div class="contact-item">Jakarta / Tangerang, Banten</div>
             <div class="contact-item">Email: wieldsaef@gmail.com</div>
@@ -2603,8 +3180,8 @@
   </section>
 
   <div class="sticky-mobile-cta">
-    <a class="primary" href="cv.pdf" target="_blank">CV</a>
-    <a class="secondary" href="portfolio.pdf" target="_blank">Portfolio</a>
+    <a class="primary" href="mailto:wieldsaef@gmail.com">Email</a>
+    <a class="secondary" href="cv.pdf" target="_blank">CV</a>
     <a class="secondary" href="http://wa.me/6289653013282" target="_blank">WhatsApp</a>
   </div>
 
@@ -2620,43 +3197,11 @@
     });
 
     document.querySelectorAll('.reveal').forEach((el) => {
+      const delay = el.getAttribute('data-delay');
+      if(delay){
+        el.style.transitionDelay = delay + 'ms';
+      }
       observer.observe(el);
-    });
-
-    document.querySelectorAll('.proof-card').forEach((el, i) => {
-      el.style.transitionDelay = (i * 0.08) + 's';
-    });
-
-    document.querySelectorAll('.best-fit-card').forEach((el, i) => {
-      el.style.transitionDelay = (i * 0.06) + 's';
-    });
-
-    document.querySelectorAll('.expertise-item').forEach((el, i) => {
-      el.style.transitionDelay = (i * 0.08) + 's';
-    });
-
-    document.querySelectorAll('.win-card').forEach((el, i) => {
-      el.style.transitionDelay = (i * 0.05) + 's';
-    });
-
-    document.querySelectorAll('.footprint-card').forEach((el, i) => {
-      el.style.transitionDelay = (i * 0.06) + 's';
-    });
-
-    document.querySelectorAll('.timeline-item').forEach((el, i) => {
-      el.style.transitionDelay = (i * 0.09) + 's';
-    });
-
-    document.querySelectorAll('.metrics-cluster').forEach((el, i) => {
-      el.style.transitionDelay = (i * 0.12) + 's';
-    });
-
-    document.querySelectorAll('.project-card').forEach((el, i) => {
-      el.style.transitionDelay = (i * 0.12) + 's';
-    });
-
-    document.querySelectorAll('.summary-row').forEach((el, i) => {
-      el.style.transitionDelay = (i * 0.08) + 's';
     });
   </script>
 </body>

@@ -604,18 +604,58 @@
       object-fit:cover;
     }
 
-    .floating-card{
-      position:absolute;
-      z-index:3;
-      min-width:170px;
-      max-width:215px;
-      padding:14px 16px;
-      border-radius:18px;
-      border:1px solid rgba(22,49,79,.08);
-      background:rgba(255,255,255,.96);
-      box-shadow:var(--shadow-soft);
-    }
+.desktop-float{
+  display:block;
+}
 
+.mobile-hero-stats{
+  display:none;
+}
+
+.mobile-stat{
+  padding:14px 12px;
+  border-radius:16px;
+  border:1px solid rgba(22,49,79,.08);
+  background:linear-gradient(180deg,#fff,#fbfcfe);
+}
+
+.mobile-stat .mini{
+  display:block;
+  color:rgba(22,49,79,.50);
+  font-size:10px;
+  font-weight:800;
+  text-transform:uppercase;
+  margin-bottom:6px;
+  letter-spacing:.12em;
+}
+
+.mobile-stat .k{
+  display:block;
+  color:var(--navy);
+  font-size:18px;
+  font-weight:800;
+  margin-bottom:4px;
+  line-height:1.05;
+}
+
+.mobile-stat .t{
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.5;
+  font-weight:700;
+}
+
+.floating-card{
+  position:absolute;
+  z-index:3;
+  min-width:170px;
+  max-width:215px;
+  padding:14px 16px;
+  border-radius:18px;
+  border:1px solid rgba(22,49,79,.08);
+  background:rgba(255,255,255,.96);
+  box-shadow:var(--shadow-soft);
+}
     .floating-card .mini{
       display:block;
       color:rgba(22,49,79,.50);
@@ -1727,23 +1767,23 @@
 
     @media (max-width: 760px){
       .nav-inner{
-        flex-direction:column;
-        align-items:flex-start;
-      }
+  flex-direction:row;
+  align-items:center;
+}
 
-      .nav-links{
-        gap:10px;
-      }
+.nav-links{
+  gap:8px;
+}
 
       .hero,
-      .section{
-        min-height:auto;
-        padding:96px 0 32px;
-      }
+.section{
+  min-height:auto;
+  padding:84px 0 24px;
+}
 
       .panel{
-        padding:46px 22px 34px;
-      }
+  padding:34px 18px 24px;
+}
 
       .hero-actions,
       .cta-actions{
@@ -1769,26 +1809,85 @@
         grid-template-columns:1fr !important;
       }
 
-.hero-photo-shell{
-  max-width:250px;
-  margin:18px auto 0;
+.hero-grid{
+  gap:28px;
 }
 
-.floating-card{
-  position:relative;
-  left:auto;
-  right:auto;
-  top:auto;
-  bottom:auto;
-  margin-top:10px;
-  min-width:0;
-  max-width:none;
-  width:100%;
+.hero-name{
+  font-size:42px;
+  line-height:1;
 }
-.hero-visual{
+
+.hero-role{
+  font-size:22px;
+  line-height:1.28;
+  max-width:none;
+}
+
+.hero-desc{
+  font-size:16px;
+  line-height:1.75;
+  max-width:none;
+}
+
+.hero-availability{
+  font-size:11px;
+  line-height:1.7;
+  letter-spacing:.10em;
+  margin-bottom:18px;
+}
+
+.hero-proof{
+  margin-top:18px;
   gap:10px;
 }
 
+.proof-card{
+  padding:16px;
+  border-radius:18px;
+}
+
+.proof-card .value{
+  font-size:24px;
+}
+
+.hero-visual{
+  min-height:auto;
+  display:grid;
+  grid-template-columns:92px 1fr;
+  align-items:end;
+  gap:12px;
+  padding-top:0;
+  margin-top:2px;
+}
+
+.hero-photo-shell{
+  max-width:none;
+  width:92px;
+  margin:0;
+  padding:8px;
+  border-radius:20px;
+  align-self:end;
+}
+
+.hero-photo-wrap{
+  border-radius:14px;
+}
+
+.desktop-float{
+  display:none !important;
+}
+
+.mobile-hero-stats{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:8px;
+  width:100%;
+}
+
+.floating-card{
+  display:none !important;
+}
       .timeline::before{
         display:none;
       }
@@ -1851,15 +1950,6 @@
         font-size:36px;
       }
 
-      .hero-name{
-        font-size:44px;
-      }
-
-      .hero-role{
-        font-size:24px;
-        line-height:1.38;
-      }
-
       .subtitle,
       .summary-content,
       .cta-text{
@@ -1891,6 +1981,32 @@
 
 body{
   padding-bottom:24px;
+}
+    .nav-inner{
+  padding:10px 0 !important;
+}
+
+.brand{
+  font-size:12px !important;
+}
+
+.nav-links{
+  gap:8px !important;
+  font-size:10px !important;
+  line-height:1.6 !important;
+}
+      .nav-inner{
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+}
+
+.nav-links{
+  flex-wrap:wrap;
+}
+      .nav-links{
+  overflow-x:auto;
+  white-space:nowrap;
 }
     }
 
@@ -1974,30 +2090,48 @@ body{
           </div>
 
           <div class="hero-visual reveal" data-delay="180">
-            <div class="hero-photo-shell interactive">
-              <div class="hero-photo-wrap">
-                <img src="profile.png" alt="Formal portrait of Wildan Saefudin" class="hero-photo" />
-              </div>
-            </div>
+  <div class="hero-photo-shell interactive">
+    <div class="hero-photo-wrap">
+      <img src="profile.png" alt="Formal portrait of Wildan Saefudin" class="hero-photo" />
+    </div>
+  </div>
 
-            <div class="floating-card interactive fc-1">
-              <span class="mini">Execution Scale</span>
-              <span class="k">150+</span>
-              <span class="t">Led cross-functional personnel across multi-site operations</span>
-            </div>
+  <div class="floating-card interactive fc-1 desktop-float">
+    <span class="mini">Execution Scale</span>
+    <span class="k">150+</span>
+    <span class="t">Led cross-functional personnel across multi-site operations</span>
+  </div>
 
-            <div class="floating-card interactive fc-2">
-              <span class="mini">Governance</span>
-              <span class="k">12 Units</span>
-              <span class="t">Built governance and execution visibility across business units</span>
-            </div>
+  <div class="floating-card interactive fc-2 desktop-float">
+    <span class="mini">Governance</span>
+    <span class="k">12 Units</span>
+    <span class="t">Built governance and execution visibility across business units</span>
+  </div>
 
-            <div class="floating-card interactive fc-3">
-              <span class="mini">Leadership Scope</span>
-              <span class="k">10+ Years</span>
-              <span class="t">Strategy, operations, commercial, finance, and decision systems</span>
-            </div>
-          </div>
+  <div class="floating-card interactive fc-3 desktop-float">
+    <span class="mini">Leadership Scope</span>
+    <span class="k">10+ Years</span>
+    <span class="t">Strategy, operations, commercial, finance, and decision systems</span>
+  </div>
+
+  <div class="mobile-hero-stats">
+    <div class="mobile-stat">
+      <span class="mini">Execution Scale</span>
+      <span class="k">150+</span>
+      <span class="t">Cross-functional personnel</span>
+    </div>
+    <div class="mobile-stat">
+      <span class="mini">Governance</span>
+      <span class="k">12 Units</span>
+      <span class="t">Execution visibility built</span>
+    </div>
+    <div class="mobile-stat">
+      <span class="mini">Leadership</span>
+      <span class="k">10+ Years</span>
+      <span class="t">Strategy to execution scope</span>
+    </div>
+  </div>
+</div>
         </div>
       </div>
       <div class="section-glow"></div>

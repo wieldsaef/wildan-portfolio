@@ -1823,6 +1823,124 @@ body{
     box-shadow:0 24px 60px rgba(17,33,54,.10) !important;
   }
 }
+    /* =========================================
+   MOBILE CLEAN UI (FINAL FIX)
+   ========================================= */
+
+@media (max-width: 760px){
+
+  /* ---------- 1. REMOVE HEAVY CARD FEEL ---------- */
+  .panel{
+    box-shadow:none !important;
+    border:1px solid rgba(22,49,79,.06) !important;
+    background:#ffffff !important;
+  }
+
+  .project-card,
+  .timeline-card,
+  .scope-box,
+  .win-card,
+  .metric-box,
+  .contact-card{
+    box-shadow:none !important;
+    border:1px solid rgba(22,49,79,.06) !important;
+  }
+
+  /* ---------- 2. REDUCE BORDER RADIUS ---------- */
+  .panel{
+    border-radius:20px !important;
+  }
+
+  .project-card,
+  .timeline-card,
+  .scope-box,
+  .win-card,
+  .metric-box{
+    border-radius:16px !important;
+  }
+
+  /* ---------- 3. IMPROVE SPACING FLOW ---------- */
+  .hero,
+  .section{
+    padding:72px 0 24px !important;
+  }
+
+  .panel{
+    padding:28px 16px 20px !important;
+  }
+
+  .section-header{
+    margin-bottom:20px !important;
+  }
+
+  .hairline{
+    margin:20px 0 !important;
+  }
+
+  /* ---------- 4. TEXT WIDTH CONTROL ---------- */
+  p,
+  .subtitle,
+  .hero-desc{
+    max-width:100% !important;
+  }
+
+  /* ---------- 5. HERO FIX (IMPORTANT) ---------- */
+  .hero-name{
+    font-size:38px !important;
+  }
+
+  .hero-role{
+    font-size:20px !important;
+  }
+
+  /* ---------- 6. PROJECT CARD CLEAN ---------- */
+  .project-top{
+    padding:12px !important;
+  }
+
+  .project-details{
+    padding:12px !important;
+  }
+
+  /* ---------- 7. DISABLE DESKTOP “FANCY EFFECTS” ---------- */
+  .panel,
+  .project-card,
+  .section:hover .panel,
+  .project-card:hover{
+    transform:none !important;
+  }
+
+  /* ---------- 8. FIX FAB (SUPER IMPORTANT) ---------- */
+  .sticky-fab-wrap{
+    right:10px !important;
+    bottom:10px !important;
+  }
+
+  .fab-item,
+  .fab-main{
+    width:48px !important;
+    height:48px !important;
+    box-shadow:0 8px 18px rgba(0,0,0,.12) !important;
+  }
+
+  .fab-icon{
+    width:48px !important;
+    height:48px !important;
+  }
+
+  /* OPTIONAL: kalau masih ganggu, aktifin ini */
+  /*
+  .sticky-fab-wrap{
+    display:none !important;
+  }
+  */
+
+  /* ---------- 9. REDUCE VISUAL NOISE ---------- */
+  .section:not(#projects):not(#contact){
+    opacity:1 !important;
+  }
+
+}
   </style>
 </head>
 <body>

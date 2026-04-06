@@ -1605,6 +1605,224 @@ body{
 .btn-primary{
   box-shadow:0 20px 40px rgba(22,49,79,.22);
 }
+    
+@media (max-width: 760px){
+
+  /* ---------- GENERAL MOBILE CONTRAST ---------- */
+  body{
+    background:#f3f6fa;
+  }
+
+  .panel{
+    background:rgba(255,255,255,.96) !important;
+    border-color:rgba(22,49,79,.08) !important;
+  }
+
+  .title,
+  .hero-name,
+  .hero-role,
+  .project-title,
+  .project-subtitle,
+  .cta-title,
+  .contact-name,
+  .timeline-role,
+  .scope-box h3,
+  .project-col h3{
+    color:var(--navy) !important;
+  }
+
+  .subtitle,
+  .hero-desc,
+  .project-tagline,
+  .cta-text,
+  .timeline-identity,
+  .project-col p,
+  .win-desc,
+  .metric-desc,
+  .about-note{
+    color:var(--muted) !important;
+    opacity:1 !important;
+  }
+
+  /* ---------- BUTTON CTA FIX ---------- */
+  .btn,
+  .btn-primary,
+  .btn-secondary{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    text-align:center !important;
+    min-height:54px !important;
+    border-radius:16px !important;
+  }
+
+  .btn-primary{
+    background:#16314f !important;
+    color:#ffffff !important;
+    border:1px solid #16314f !important;
+    box-shadow:0 16px 30px rgba(22,49,79,.18) !important;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:focus,
+  .btn-primary:active{
+    background:#11273d !important;
+    color:#ffffff !important;
+  }
+
+  .btn-secondary{
+    background:#ffffff !important;
+    color:#16314f !important;
+    border:1px solid rgba(22,49,79,.12) !important;
+    box-shadow:none !important;
+  }
+
+  .btn-secondary:hover,
+  .btn-secondary:focus,
+  .btn-secondary:active{
+    background:#ffffff !important;
+    color:#16314f !important;
+  }
+
+  /* matiin shimmer yang kadang bikin teks ketiban */
+  .btn-primary::after{
+    display:none !important;
+  }
+
+  /* ---------- FAB / MOBILE CTA FIX ---------- */
+  .sticky-fab-wrap{
+    right:12px !important;
+    bottom:12px !important;
+    gap:10px !important;
+    z-index:120 !important;
+  }
+
+  .fab-item{
+    width:56px !important;
+    height:56px !important;
+    min-width:56px !important;
+    padding:0 !important;
+    border-radius:999px !important;
+    overflow:hidden !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    background:#ffffff !important;
+    color:#16314f !important;
+    border:1px solid rgba(22,49,79,.10) !important;
+    box-shadow:0 14px 28px rgba(17,33,54,.16) !important;
+  }
+
+  .fab-main{
+    background:#16314f !important;
+    color:#ffffff !important;
+    border:1px solid #16314f !important;
+  }
+
+  .fab-item:hover,
+  .fab-main:hover{
+    width:56px !important;
+    transform:none !important;
+  }
+
+  .fab-icon{
+    width:56px !important;
+    min-width:56px !important;
+    height:56px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    font-size:11px !important;
+    line-height:1 !important;
+    color:inherit !important;
+  }
+
+  .fab-text{
+    display:none !important;
+  }
+
+  /* kalau icon CTA pakai svg */
+  .fab-item svg,
+  .fab-main svg,
+  .fab-icon svg{
+    width:20px !important;
+    height:20px !important;
+    display:block !important;
+    fill:currentColor !important;
+    stroke:currentColor !important;
+  }
+
+  /* kalau icon CTA pakai i / span */
+  .fab-item i,
+  .fab-main i,
+  .fab-icon i,
+  .fab-item span,
+  .fab-main span,
+  .fab-icon span{
+    color:inherit !important;
+  }
+
+  /* ---------- NAV MOBILE CONTRAST ---------- */
+  .nav{
+    background:rgba(248,250,252,.96) !important;
+    border-bottom:1px solid rgba(22,49,79,.08) !important;
+  }
+
+  .brand{
+    color:var(--navy) !important;
+  }
+
+  .nav-links a{
+    color:var(--muted) !important;
+    opacity:1 !important;
+  }
+
+  /* ---------- PROJECT / CARD CONTRAST ---------- */
+  .project-card,
+  .scope-box,
+  .timeline-card,
+  .win-card,
+  .metric-box,
+  .footprint-card,
+  .project-summary-box,
+  .project-col,
+  .contact-card{
+    background:#ffffff !important;
+    opacity:1 !important;
+  }
+
+  .project-col.featured,
+  .proof-card.featured,
+  .metric-box.featured,
+  .win-card.featured{
+    color:#ffffff !important;
+  }
+
+  .proof-card.featured .value,
+  .proof-card.featured .label,
+  .metric-box.featured .metric-label,
+  .metric-box.featured .metric-value,
+  .metric-box.featured .metric-desc,
+  .win-card.featured .win-mini,
+  .win-card.featured .win-value,
+  .win-card.featured .win-desc{
+    color:#ffffff !important;
+  }
+
+  /* ---------- REDUCE TRANSFORM BUG ON MOBILE ---------- */
+  .hero .panel,
+  #projects .panel,
+  #contact .panel,
+  .project-card,
+  .section:hover .panel{
+    transform:none !important;
+  }
+
+  .project-card:hover{
+    transform:none !important;
+    box-shadow:0 24px 60px rgba(17,33,54,.10) !important;
+  }
+}
   </style>
 </head>
 <body>
